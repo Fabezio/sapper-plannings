@@ -1,3 +1,5 @@
+// import * from './users'
+
 const chaouti = { nom: 'Chaouti', prenom: 'Brahim' }
 const coulibaly = { nom: 'Coulibaly', prenom: 'Oumar' }
 const dossou = { nom: 'Dossou', prenom: 'Victorin' }

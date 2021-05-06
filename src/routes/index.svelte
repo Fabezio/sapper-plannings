@@ -1,46 +1,72 @@
-
-
 <script>
-	import Counter from '../components/Counter/index.svelte';
+    import plannings from "../data/plannings.js";
+    import Eff from "../components/Eff.svelte";
+    const { mai } = plannings;
+    const { ADS } = mai;
+
+    const namesList = [];
+    function isInList(obj) {
+        if (!namesList.includes(obj.nom.toLowerCase()))
+            return namesList.push(obj.nom.toLowerCase());
+    }
+    ADS.map(({ agentJour, agentNuit, chefJour, chefNuit }) => {
+        isInList(agentJour);
+        isInList(agentNuit);
+        isInList(chefJour);
+        isInList(chefNuit);
+    });
+    namesList.sort();
+    console.log(namesList);
+    //
+    const today = new Date().getDate();
+    let worker = "";
+    console.log(today);
 </script>
 
-<svelte:head>
-	<title>Accueil</title>
-</svelte:head>
+<h1>Planning mai</h1>
+<!-- <input type="text" bind:value={worker} placeholder="entrez le nom de l'agent" />
+{#if namesList.includes(worker)}
+    <p>{worker}</p>
 
-<section>
-	<h1>
-		Accueil
-	</h1>
+{/if} -->
+{#each ADS as { jour, agentJour, agentNuit, chefJour, chefNuit }}
+    {#if jour >= today}
+        <div class="flex">
+            <div class="nb">
+                {jour}
+            </div>
 
-	<p>Pour voir le planning du mois, clique <a href="planning">ici</a><br>ou sur le lien ci-dessus</p>
-</section>
+            <div class="boxes">
+                <Eff vac="🌞" chef={chefJour} agent={agentJour} />
+                <Eff vac="🌜" chef={chefNuit} agent={agentNuit} />
+            </div>
+        </div>
+    {/if}
+{/each}
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+    .flex {
+        display: flex;
+        padding: 1rem;
+        justify-content: center;
+    }
+    .nb {
+        padding: 1rem;
+    }
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .boxes {
+        display: flex;
+        flex-direction: row;
+    }
+    @media screen and (max-width: 790px) {
+        .boxes {
+            flex-direction: column;
+        }
+        .flex {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        }
+    }
 </style>

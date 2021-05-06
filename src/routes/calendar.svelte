@@ -33,11 +33,11 @@
 <div class="main">
     <h1>Calendrier</h1>
 
-    <p>aujourd'hui: {formatter.format(date)}</p>
+    <!-- <p>aujourd'hui: {formatter.format(date)}</p> -->
 
     <div class="grid">
         {#each days as day}
-            <div class="bold">{day}</div>
+            <div class="bold">{day.slice(0, 3)}</div>
             <!-- <td>{day}</td> -->
         {/each}
         {#each [...Array(startingWeekDay - 1)] as day}
@@ -62,8 +62,10 @@
         margin: auto;
     }
     .grid {
+        text-align: center;
         display: grid;
         text-align: center;
+        /* margin: auto; */
         grid-template-columns: repeat(7, 1fr);
     }
     .bold {
@@ -83,11 +85,16 @@
         text-align: center;
         padding: 1rem;
         /* font-weight: 500; */
-        transition-duration: 500ms;
+        transition-duration: 250ms;
     }
     .box:hover {
         /* font-size: 1.25rem; */
         transform: scale(1.25);
         font-weight: bolder;
+    }
+    @media screen and (max-width: 790px) {
+        .main {
+            width: 100%;
+        }
     }
 </style>
