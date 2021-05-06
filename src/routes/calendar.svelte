@@ -1,5 +1,5 @@
 <script>
-    import Head from "../components/containers/Head.svelte";
+    // import Head from "../components/containers/Head.svelte";
     // const { default: Planning }=require("./planning.svelte")
 
     // const { default: Index } = require("$lib/Counter/index.svelte");
@@ -32,7 +32,7 @@
 </script>
 
 <div class="main">
-    <Head title="Calendrier" />
+    <!-- <Head title="Calendrier" /> -->
     <!-- <h1>Calendrier</h1> -->
 
     <!-- <p>aujourd'hui: {formatter.format(date)}</p> -->

@@ -1,19 +1,12 @@
-
-
 <script>
-	import Counter from '../components/Counter/index.svelte';
+	import Counter from "../components/Counter/index.svelte";
 </script>
 
-<svelte:head>
-	<title>Accueil</title>
-</svelte:head>
-
 <section>
-	<h1>
-		Accueil
-	</h1>
-
-	<p>Pour voir le planning du mois, clique <a href="planning">ici</a><br>ou sur le lien ci-dessus</p>
+	<p>
+		Pour voir le planning du mois, clique <a href="planning">ici</a><br />ou
+		sur le lien ci-dessus
+	</p>
 </section>
 
 <style>

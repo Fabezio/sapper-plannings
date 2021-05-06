@@ -2,12 +2,13 @@
 	// import { url } from "inspector";
 
 	export let segment;
-	const links = [
-		{ url: undefined, label: "Planning", visible: true },
-		{ url: "calendar", label: "Calendrier", visible: true },
-		{ url: "about", label: "About", visible: false },
-		{ url: "blog", label: "Blog", visible: false, prefetch: true },
-	];
+	export let links;
+	// const links = [
+	// 	{ url: undefined, label: "Planning", visible: true },
+	// 	{ url: "calendar", label: "Calendrier", visible: true },
+	// 	{ url: "about", label: "About", visible: false },
+	// 	{ url: "blog", label: "Blog", visible: false, prefetch: true },
+	// ];
 </script>
 
 <nav>

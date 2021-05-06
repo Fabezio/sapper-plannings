@@ -1,6 +1,6 @@
 <script>
     import plannings from "../data/plannings.js";
-    import Head from "../components/containers/Head.svelte";
+    // import Head from "../components/containers/Head.svelte";
     import Eff from "../components/Eff.svelte";
     const { mai } = plannings;
     const { ADS } = mai;
@@ -24,7 +24,7 @@
     console.log(today);
 </script>
 
-<Head title="Planning" />
+<!-- <Head title="Planning" /> -->
 <!-- <h1>Planning mai</h1> -->
 <!-- <input type="text" bind:value={worker} placeholder="entrez le nom de l'agent" />
 {#if namesList.includes(worker)}

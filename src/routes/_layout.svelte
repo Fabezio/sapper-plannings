@@ -1,11 +1,32 @@
 <script>
+	import Head from "../components/containers/Head.svelte";
 	import Nav from "../components/containers/Nav.svelte";
 	import Footer from "../components/containers/Footer.svelte";
-
+	import { url } from "inspector";
+	const links = [
+		{ url: undefined, label: "Planning", visible: true },
+		{ url: "calendar", label: "Calendrier", visible: true },
+		{ url: "about", label: "About", visible: false },
+		{ url: "blog", label: "Blog", visible: false, prefetch: true },
+		{ url: "home", label: "Accueil", visible: false, prefetch: true },
+	];
+	// let title = "";
+	// function selectHeader() {
+	// 	links.map(({ url, label }) => {
+	// 		if (url === segment) title = label;
+	// 		return title;
+	// 	});
+	// }
 	export let segment;
 </script>
 
-<Nav {segment} />
+<Nav {segment} {links} />
+{#each links as { url, label }}
+	{#if url === segment}
+		<Head title={label || "ajoute un titre"} />
+	{/if}
+{/each}
+<!-- <svelte:component  /> -->
 
 <main>
 	<slot />
