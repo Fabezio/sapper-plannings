@@ -1,4 +1,5 @@
 <script>
+    import Head from "../components/containers/Head.svelte";
     // const { default: Planning }=require("./planning.svelte")
 
     // const { default: Index } = require("$lib/Counter/index.svelte");
@@ -31,7 +32,8 @@
 </script>
 
 <div class="main">
-    <h1>Calendrier</h1>
+    <Head title="Calendrier" />
+    <!-- <h1>Calendrier</h1> -->
 
     <!-- <p>aujourd'hui: {formatter.format(date)}</p> -->
 
@@ -92,7 +94,7 @@
         transform: scale(1.25);
         font-weight: bolder;
     }
-    @media screen and (max-width: 790px) {
+    @media screen and (max-width: 480px) {
         .main {
             width: 100%;
         }

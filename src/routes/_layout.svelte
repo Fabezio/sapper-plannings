@@ -1,16 +1,17 @@
 <script>
 	import Nav from "../components/containers/Nav.svelte";
+	import Footer from "../components/containers/Footer.svelte";
 
 	export let segment;
 </script>
 
 <Nav {segment} />
-<svelte:head>
-	<title>Plannings Arcs de Seine</title></svelte:head
->
+
 <main>
 	<slot />
 </main>
+
+<Footer />
 
 <style>
 	main {
