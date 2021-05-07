@@ -10,8 +10,13 @@
 
 <style>
     h1 {
-        margin: 2rem auto 4rem;
+        margin: 3rem auto 2rem;
         text-align: center;
         text-transform: uppercase;
+    }
+    @media screen and (max-width: 480px) {
+        h1 {
+            margin: 1rem auto;
+        }
     }
 </style>

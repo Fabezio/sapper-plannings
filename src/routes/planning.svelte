@@ -4,6 +4,7 @@
     import Eff from "../components/Eff.svelte";
     const { mai } = plannings;
     const { ADS } = mai;
+    // console.table(mai);
 
     const namesList = [];
     function isInList(obj) {
@@ -17,11 +18,11 @@
         isInList(chefNuit);
     });
     namesList.sort();
-    console.log(namesList);
+    // console.log(namesList);
     //
     const today = new Date().getDate();
     let worker = "";
-    console.log(today);
+    // console.log(today);
 </script>
 
 <!-- <Head title="Planning" /> -->
@@ -31,6 +32,7 @@
     <p>{worker}</p>
 
 {/if} -->
+<h2>Mois actuel: {mai.month}</h2>
 {#each ADS as { jour, agentJour, agentNuit, chefJour, chefNuit }}
     {#if jour >= today}
         <div class="flex">
@@ -67,5 +69,13 @@
         .flex {
             border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         }
+        h2 {
+            /* text-align: center; */
+            margin: 1rem auto;
+        }
+    }
+    h2 {
+        text-align: center;
+        margin: 2rem auto;
     }
 </style>

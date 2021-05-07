@@ -24,6 +24,7 @@ const boussetta = { nom: 'Boussetta', prenom: 'Sami' }
 
 const plannings = {
   mai: {
+    month: 'mai',
     days: '31',
     ADS: [
       {
