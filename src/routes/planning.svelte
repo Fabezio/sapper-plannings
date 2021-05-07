@@ -58,11 +58,11 @@
             class="input"
             type="text"
             bind:value={worker}
-            placeholder="entrez le nom de l'agent"
+            placeholder="entre le nom de l'agent"
         />
     {:else}
         <div class="msg">
-            tu peux filter les résultats en cliquant ci-contre
+            tu peux filter les résultats<br /> en cliquant ci-contre
         </div>
     {/if}
     <button class="round" title="filtrer avec mon nom" on:click={toggleFilter}>
