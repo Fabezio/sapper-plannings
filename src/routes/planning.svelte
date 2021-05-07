@@ -1,74 +1,118 @@
 <script>
     import plannings from "../data/plannings.js";
-    // import Head from "../components/containers/Head.svelte";
-    import Eff from "../components/Eff.svelte";
+    import filter from "../../static/filter.png";
+    import Workers from "../components/Workers.svelte";
+
     const { mai } = plannings;
     const { ADS } = mai;
-    // console.table(mai);
 
     const namesList = [];
     function isInList(obj) {
         if (!namesList.includes(obj.nom.toLowerCase()))
             return namesList.push(obj.nom.toLowerCase());
     }
-    ADS.map(({ agentJour, agentNuit, chefJour, chefNuit }) => {
-        isInList(agentJour);
-        isInList(agentNuit);
-        isInList(chefJour);
-        isInList(chefNuit);
-    });
+    let displayWorkersList = ADS.map(
+        ({ agentJour, agentNuit, chefJour, chefNuit }) => {
+            isInList(agentJour);
+            isInList(agentNuit);
+            isInList(chefJour);
+            isInList(chefNuit);
+        }
+    );
+    let adsFilter = [];
+    let handleFilter = false;
+    function toggleFilter() {
+        return (handleFilter = !handleFilter);
+    }
+
     namesList.sort();
-    // console.log(namesList);
-    //
+    function displayFilteredList() {
+        ADS.map((obj) => {
+            if (
+                worker === obj.chefJour.nom.toLowerCase() ||
+                worker === obj.chefNuit.nom.toLowerCase() ||
+                worker === obj.agentJour.nom.toLowerCase() ||
+                worker === obj.agentNuit.nom.toLowerCase()
+            ) {
+                adsFilter = [...adsFilter, obj];
+                console.log(obj);
+            }
+        });
+        // worker = "";
+        return adsFilter;
+        // console.log(adsFilter);
+    }
+    $: if (!handleFilter || worker === "") adsFilter = [];
+
     const today = new Date().getDate();
     let worker = "";
-    // console.log(today);
+    $: if (namesList.includes(worker)) displayFilteredList();
+    // :displayFilteredList();
 </script>
 
-<!-- <Head title="Planning" /> -->
-<!-- <h1>Planning mai</h1> -->
-<!-- <input type="text" bind:value={worker} placeholder="entrez le nom de l'agent" />
-{#if namesList.includes(worker)}
-    <p>{worker}</p>
-
-{/if} -->
 <h2>Mois actuel: {mai.month}</h2>
-{#each ADS as { jour, agentJour, agentNuit, chefJour, chefNuit }}
-    {#if jour >= today}
-        <div class="flex">
-            <div class="nb">
-                {jour}
-            </div>
 
-            <div class="boxes">
-                <Eff vac="🌞" chef={chefJour} agent={agentJour} />
-                <Eff vac="🌜" chef={chefNuit} agent={agentNuit} />
-            </div>
+<div class="flex-filter">
+    {#if handleFilter}
+        <input
+            class="input"
+            type="text"
+            bind:value={worker}
+            placeholder="entrez le nom de l'agent"
+        />
+    {:else}
+        <div class="msg">
+            tu peux filter les résultats en cliquant ci-contre
         </div>
     {/if}
-{/each}
+    <button class="round" title="filtrer avec mon nom" on:click={toggleFilter}>
+        <img src={filter} alt="filtre" width="24" height="24" />
+    </button>
+</div>
+
+{#if namesList.includes(worker)}
+    <Workers arr={adsFilter} />
+{/if}
+{#if adsFilter.length === 0}
+    <Workers arr={ADS} />
+{/if}
 
 <style>
-    .flex {
-        display: flex;
-        padding: 1rem;
-        justify-content: center;
+    .round {
+        border-radius: 50%;
+        padding: 0;
+        width: 48px;
+        height: 48px;
+        border: none;
+        opacity: 0.75;
     }
-    .nb {
-        padding: 1rem;
+    .round:hover {
+        opacity: 1;
+    }
+    .msg,
+    input {
+        margin-right: 1rem;
+        /* transform: rotateY(180deg); */
+        transition-duration: 250ms;
+        /* transform: fade */
+    }
+    .msg {
+        transition-duration: 250ms;
+        align-self: center;
+    }
+    input {
+        transition-duration: 250ms;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        padding: 8px 8px;
+        border-radius: 4px;
+        margin-right: 1rem;
+    }
+    .flex-filter {
+        display: flex;
+        justify-content: flex-end;
     }
 
-    .boxes {
-        display: flex;
-        flex-direction: row;
-    }
     @media screen and (max-width: 480px) {
-        .boxes {
-            flex-direction: column;
-        }
-        .flex {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-        }
         h2 {
             /* text-align: center; */
             margin: 1rem auto;
