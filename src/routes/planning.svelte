@@ -8,8 +8,8 @@
 
     const namesList = [];
     function isInList(obj) {
-        if (!namesList.includes(obj.nom.toLowerCase()))
-            return namesList.push(obj.nom.toLowerCase());
+        if (!namesList.includes(obj.nom.toUpperCase()))
+            return namesList.push(obj.nom.toUpperCase());
     }
     let displayWorkersList = ADS.map(
         ({ agentJour, agentNuit, chefJour, chefNuit }) => {
@@ -29,10 +29,10 @@
     function displayFilteredList() {
         ADS.map((obj) => {
             if (
-                worker === obj.chefJour.nom.toLowerCase() ||
-                worker === obj.chefNuit.nom.toLowerCase() ||
-                worker === obj.agentJour.nom.toLowerCase() ||
-                worker === obj.agentNuit.nom.toLowerCase()
+                worker === obj.chefJour.nom.toUpperCase() ||
+                worker === obj.chefNuit.nom.toUpperCase() ||
+                worker === obj.agentJour.nom.toUpperCase() ||
+                worker === obj.agentNuit.nom.toUpperCase()
             ) {
                 adsFilter = [...adsFilter, obj];
                 console.log(obj);
@@ -46,6 +46,7 @@
 
     const today = new Date().getDate();
     let worker = "";
+    $: worker = worker.toUpperCase();
     $: if (namesList.includes(worker)) displayFilteredList();
     // :displayFilteredList();
 </script>
