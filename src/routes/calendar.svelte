@@ -32,11 +32,6 @@
 </script>
 
 <div class="main">
-    <!-- <Head title="Calendrier" /> -->
-    <!-- <h1>Calendrier</h1> -->
-
-    <!-- <p>aujourd'hui: {formatter.format(date)}</p> -->
-
     <div class="grid">
         {#each days as day}
             <div class="bold">{day.slice(0, 3)}</div>
@@ -45,8 +40,7 @@
         {#each [...Array(startingWeekDay - 1)] as day}
             <div class="box" id={day + 1} />
         {/each}
-        <!-- {#if startingWeekDay < 7}
-        {/if} -->
+
         {#each [...Array(31).keys()] as day}
             <div
                 class="box {day + 1 < today && 'past'} {today === day + 1 &&

@@ -16,13 +16,7 @@
 			prefetch: true,
 		},
 	];
-	// let title = "";
-	// function selectHeader() {
-	// 	links.map(({ url, label }) => {
-	// 		if (url === segment) title = label;
-	// 		return title;
-	// 	});
-	// }
+
 	export let segment;
 </script>
 

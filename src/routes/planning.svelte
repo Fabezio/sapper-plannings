@@ -3,23 +3,6 @@
     import filter from "../../static/filter.png";
     import Workers from "../components/Workers.svelte";
 
-    // const { mai } = plannings;
-    // const { ADS } = mai;
-
-    // const namesList = [];
-    // function isInList(obj) {
-    //     if (!namesList.includes(obj.nom.toUpperCase()))
-    //         return namesList.push(obj.nom.toUpperCase());
-    // }
-    // let displayWorkersList = ADS.map(
-    //     ({ agentJour, agentNuit, chefJour, chefNuit }) => {
-    //         isInList(agentJour);
-    //         isInList(agentNuit);
-    //         isInList(chefJour);
-    //         isInList(chefNuit);
-    //     }
-    // );
-    // namesList.sort();
     let adsFilter = [];
     let handleFilter = false;
     function toggleFilter() {
@@ -38,9 +21,8 @@
                 console.log(obj);
             }
         });
-        // worker = "";
+
         return adsFilter;
-        // console.log(adsFilter);
     }
     $: if (!handleFilter || worker === "") adsFilter = [];
 
@@ -48,7 +30,6 @@
     let worker = "";
     $: worker = worker.toUpperCase();
     $: if (namesList.includes(worker)) displayFilteredList();
-    // :displayFilteredList();
 </script>
 
 <h2>Mois actuel: {mai.month}</h2>
