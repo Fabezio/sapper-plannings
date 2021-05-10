@@ -3,6 +3,7 @@
     const year = date.getFullYear();
 </script>
 
+<div class="pre-footer" />
 <footer>
     <p>
         plannings-arcsdeseine &copy; {year}
@@ -30,7 +31,16 @@
 
         color: white;
     }
+    .pre-footer {
+        position: static;
+        /* bottom: 0; */
+        height: 3rem;
+    }
     footer {
+        position: relative;
+        bottom: 0;
+        height: 3rem;
+        width: 100%;
         padding: 0.25rem;
         /* height: 3rem; */
         margin-bottom: 0;
