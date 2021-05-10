@@ -79,7 +79,7 @@
         /* transform: fade */
     }
     .msg {
-        transition-duration: 250ms;
+        /* transition-duration: 250ms; */
         align-self: center;
     }
     input {

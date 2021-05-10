@@ -4,7 +4,7 @@
 	import Footer from "../components/containers/Footer.svelte";
 	// import { url } from "inspector";
 	const links = [
-		{ url: undefined, label: "Synthéthique", visible: true },
+		{ url: undefined, label: "Synthétique", visible: true },
 		{ url: "calendar", label: "Calendrier", visible: false },
 		{ url: "about", label: "About", visible: false },
 		{ url: "blog", label: "Blog", visible: false, prefetch: true },
