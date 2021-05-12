@@ -1,26 +1,29 @@
 <script>
     import { mai, ADS, namesList } from "../../services/workers.js";
     let worker = "";
+    function generatePlanning(obj) {
+        return (worker = obj);
+    }
     $: worker = worker.toUpperCase();
 </script>
 
 <h2>Agents planifiés</h2>
-
+<p>Clique sur un nom ci-dessous</p>
 <div class="list">
     {#each namesList as thisname}
         <div class="el">
-            <a href="#{thisname}">
+            <button href="#{thisname}" on:click={() => (worker = thisname)}>
                 {thisname}
-            </a>
+            </button>
         </div>
     {/each}
 </div>
-<input
+<!-- <input
     class="input"
     type="text"
     bind:value={worker}
     placeholder="entre le nom de l'agent"
-/><br />
+/><br /> -->
 {#if namesList.includes(worker)}
     <h3>{worker}</h3>
     <table>
@@ -82,8 +85,26 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
-    h2 {
+    h2,
+    h3 {
         text-align: center;
         margin: 2rem auto;
+    }
+    table {
+        min-width: 50%;
+        max-width: 500px;
+        margin: 0 auto;
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+    tr {
+    }
+    th {
+        border-bottom: 2px solid black;
+        text-align: center;
+    }
+    td {
+        border-bottom: 1px solid black;
+        text-align: center;
     }
 </style>
