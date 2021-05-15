@@ -4,6 +4,21 @@
     function generatePlanning(obj) {
         return (worker = obj);
     }
+    const formatter = Intl.DateTimeFormat("fr", {
+        weekday: "short",
+        /* day: "numeric",
+        month: "short",
+        year: "numeric", */
+    });
+    ADS.map((el) => {
+        const thisDay = new Date().setFullYear(2021, 5, el.jour);
+        let weekDay = formatter.format(thisDay);
+        // weekDay.length = 3;
+        // weekDay.length = 3;
+        el.weekday = weekDay.slice(0, 3);
+        console.log(el.weekday);
+        return el;
+    });
     $: worker = worker.toUpperCase();
 </script>
 
@@ -28,14 +43,15 @@
     <h3>{worker}</h3>
     <table>
         <tr>
-            <th>jour</th>
+            <th colspan="2">jour</th>
             <th>site</th>
             <th>heures</th>
             <th>fonction</th>
         </tr>
-        {#each ADS as { jour, agentJour, agentNuit, chefJour, chefNuit }}
+        {#each ADS as { jour, weekday, agentJour, agentNuit, chefJour, chefNuit }}
             <tr>
-                <td>{jour}</td>
+                <td class="day-cell">{weekday}</td>
+                <td class="day-cell">{jour}</td>
                 <td
                     >{#if worker === agentJour.nom.toUpperCase() || worker === chefJour.nom.toUpperCase() || worker === agentNuit.nom.toUpperCase() || worker === chefNuit.nom.toUpperCase()}
                         Arcs de Seine
@@ -106,5 +122,8 @@
     td {
         border-bottom: 1px solid black;
         text-align: center;
+    }
+    td.day-cell {
+        margin: 0;
     }
 </style>

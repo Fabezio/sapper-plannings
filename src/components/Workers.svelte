@@ -6,6 +6,22 @@
     function dispatchAll() {
         return (seeAll = !seeAll);
     }
+    const formatter = Intl.DateTimeFormat("fr", {
+        weekday: "short",
+        /* day: "numeric",
+        month: "short",
+        year: "numeric", */
+    });
+    arr.map((el) => {
+        const thisDay = new Date().setFullYear(2021, 5, el.jour);
+        let weekDay = formatter.format(thisDay);
+        // weekDay.length = 3;
+        // weekDay.length = 3;
+        el.weekday = weekDay.slice(0, 3);
+        console.log(el.weekday);
+        return el;
+    });
+    console.log(arr);
 </script>
 
 <div class="right">
@@ -13,12 +29,16 @@
         >voir {seeAll ? "3 premiers" : "tout"}</button
     >
 </div>
+<!-- <div>{formatter.format(thisDay)}</div> -->
 
-{#each arr as { jour, agentJour, agentNuit, chefJour, chefNuit }}
+{#each arr as { jour, weekday, agentJour, agentNuit, chefJour, chefNuit }}
     {#if seeAll}
         <div class="flex">
             <div class="nb">
-                {jour}
+                <span>
+                    {weekday}
+                    {jour}
+                </span>
             </div>
 
             <div class="boxes">
@@ -26,9 +46,10 @@
                 <Eff vac="🌜" chef={chefNuit} agent={agentNuit} />
             </div>
         </div>
-    {:else if jour >= today && jour < today + 3}
+    {:else if jour >= today}
         <div class="flex">
             <div class="nb">
+                {weekday}
                 {jour}
             </div>
 
