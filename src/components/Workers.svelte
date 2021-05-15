@@ -6,21 +6,21 @@
     function dispatchAll() {
         return (seeAll = !seeAll);
     }
-    const formatter = Intl.DateTimeFormat("fr", {
+    /* const formatter = Intl.DateTimeFormat("fr", {
         weekday: "short",
-        /* day: "numeric",
+        day: "numeric",
         month: "short",
-        year: "numeric", */
+        year: "numeric",
     });
     arr.map((el) => {
         const thisDay = new Date().setFullYear(2021, 5, el.jour);
         let weekDay = formatter.format(thisDay);
-        // weekDay.length = 3;
-        // weekDay.length = 3;
+        weekDay.length = 3;
+        weekDay.length = 3;
         el.weekday = weekDay.slice(0, 3);
         console.log(el.weekday);
         return el;
-    });
+    }); */
     console.log(arr);
 </script>
 

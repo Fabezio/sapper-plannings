@@ -4,21 +4,21 @@
     function generatePlanning(obj) {
         return (worker = obj);
     }
-    const formatter = Intl.DateTimeFormat("fr", {
+    /* const formatter = Intl.DateTimeFormat("fr", {
         weekday: "short",
-        /* day: "numeric",
+        day: "numeric",
         month: "short",
-        year: "numeric", */
+        year: "numeric",
     });
     ADS.map((el) => {
         const thisDay = new Date().setFullYear(2021, 5, el.jour);
         let weekDay = formatter.format(thisDay);
-        // weekDay.length = 3;
-        // weekDay.length = 3;
+        weekDay.length = 3;
+        weekDay.length = 3;
         el.weekday = weekDay.slice(0, 3);
         console.log(el.weekday);
         return el;
-    });
+    }); */
     $: worker = worker.toUpperCase();
 </script>
 
@@ -124,6 +124,12 @@
         text-align: center;
     }
     td.day-cell {
-        margin: 0;
+        max-width: 4rem;
+    }
+    @media screen and (max-width: 480px) {
+        table {
+            width: 100%;
+            margin: 0;
+        }
     }
 </style>
