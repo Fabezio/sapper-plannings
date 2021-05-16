@@ -56,8 +56,7 @@
         border: 2px solid black;
         border-collapse: collapse;
     }
-    tr {
-    }
+
     th {
         border-bottom: 2px solid black;
         text-align: center;
