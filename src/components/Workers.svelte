@@ -31,10 +31,15 @@
 </div>
 <!-- <div>{formatter.format(thisDay)}</div> -->
 
-{#each arr as { jour, weekday, agentJour, agentNuit, chefJour, chefNuit }}
+{#each arr as { jour, weekday, agentJour, agentNuit, chefJour, chefNuit, ferie }}
     {#if seeAll}
-        <div class="flex">
-            <div class="nb">
+        <div
+            class="flex bar {(ferie ||
+                weekday === 'sam.' ||
+                weekday === 'dim.') &&
+                'we'}"
+        >
+            <div class="nb title">
                 <span>
                     {weekday}
                     {jour}
@@ -47,8 +52,13 @@
             </div>
         </div>
     {:else if jour >= today}
-        <div class="flex">
-            <div class="nb">
+        <div
+            class="flex bar {(ferie ||
+                weekday === 'sam.' ||
+                weekday === 'dim.') &&
+                'we'}"
+        >
+            <div class="nb title">
                 {weekday}
                 {jour}
             </div>
@@ -62,6 +72,19 @@
 {/each}
 
 <style>
+    .we {
+        background: rgba(0, 127, 0, 0.33);
+    }
+    .title {
+        font-weight: bold;
+        align-self: center;
+    }
+    .bar {
+        border: 2px ridge rgba(0, 0, 0, 0.25);
+        margin: 4px 0;
+        border-radius: 7px;
+        box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    }
     .flex {
         display: flex;
         padding: 1rem;

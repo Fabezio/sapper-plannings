@@ -1,5 +1,6 @@
 <script>
     import { mai, ADS, namesList } from "../../services/workers.js";
+    import Sheet from "../../components/Sheet.svelte";
     let worker = "";
     function generatePlanning(obj) {
         return (worker = obj);
@@ -33,103 +34,33 @@
         </div>
     {/each}
 </div>
-<!-- <input
-    class="input"
-    type="text"
-    bind:value={worker}
-    placeholder="entre le nom de l'agent"
-/><br /> -->
+
 {#if namesList.includes(worker)}
-    <h3>{worker}</h3>
-    <table>
-        <tr>
-            <th colspan="2">jour</th>
-            <th>site</th>
-            <th>heures</th>
-            <th>fonction</th>
-        </tr>
-        {#each ADS as { jour, weekday, agentJour, agentNuit, chefJour, chefNuit }}
-            <tr>
-                <td class="day-cell">{weekday}</td>
-                <td class="day-cell">{jour}</td>
-                <td
-                    >{#if worker === agentJour.nom.toUpperCase() || worker === chefJour.nom.toUpperCase() || worker === agentNuit.nom.toUpperCase() || worker === chefNuit.nom.toUpperCase()}
-                        Arcs de Seine
-                    {/if}
-                </td>
-                <td
-                    >{#if worker === agentJour.nom.toUpperCase() || worker === chefJour.nom.toUpperCase()}
-                        07h00 - 19h00
-                    {:else if worker === agentNuit.nom.toUpperCase() || worker === chefNuit.nom.toUpperCase()}
-                        19h00 - 07h00
-                    {/if}</td
-                >
-                <td>
-                    {#if worker === chefJour.nom.toUpperCase() || worker === chefNuit.nom.toUpperCase()}
-                        Chef d'équipe
-                    {:else if worker === agentNuit.nom.toUpperCase() || worker === agentJour.nom.toUpperCase()}
-                        agent
-                    {/if}
-                </td>
-            </tr>
-        {/each}
-    </table>
+    <Sheet {worker} arr={ADS} />
 {:else if worker.length > 0 && !namesList.includes(worker)}
     nom non correspondant, vérifie l'orthoghraphe
 {/if}
 
 <style>
-    input {
-        margin-right: 1rem;
-        transition-duration: 250ms;
-        transition-duration: 250ms;
+    button {
+        min-width: 7rem;
         border: 1px solid rgba(0, 0, 0, 0.25);
-        padding: 8px 8px;
-        border-radius: 4px;
-        margin-right: 1rem;
+        border-radius: 3px;
+        padding: 4px;
+        font-size: 1.25 rem;
+        margin: 1px;
     }
     .el {
-        padding: 0 1rem;
     }
-    a {
-        display: inline;
-        text-decoration: none;
-    }
+
     .list {
-        margin: 1rem;
+        margin: 0;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
     }
-    h2,
-    h3 {
+    h2 {
         text-align: center;
         margin: 2rem auto;
-    }
-    table {
-        min-width: 50%;
-        max-width: 500px;
-        margin: 0 auto;
-        border: 2px solid black;
-        border-collapse: collapse;
-    }
-    tr {
-    }
-    th {
-        border-bottom: 2px solid black;
-        text-align: center;
-    }
-    td {
-        border-bottom: 1px solid black;
-        text-align: center;
-    }
-    td.day-cell {
-        max-width: 4rem;
-    }
-    @media screen and (max-width: 480px) {
-        table {
-            width: 100%;
-            margin: 0;
-        }
     }
 </style>

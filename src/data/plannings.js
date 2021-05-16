@@ -29,6 +29,7 @@ const plannings = {
     ADS: [
       {
         jour: 1,
+        ferie: true,
         chefJour: coulibaly,
         chefNuit: riquet,
         agentJour: disci,
@@ -78,6 +79,7 @@ const plannings = {
       },
       {
         jour: 8,
+        ferie: true,
         chefJour: bonnet,
         chefNuit: jean,
         agentJour: ketir,
@@ -113,6 +115,7 @@ const plannings = {
       },
       {
         jour: 13,
+        ferie: true,
         chefJour: renaud,
         chefNuit: bocum,
         agentJour: frahi,
@@ -190,6 +193,7 @@ const plannings = {
       },
       {
         jour: 24,
+        ferie: true,
         chefJour: chaouti,
         chefNuit: kalle,
         agentJour: disci,
