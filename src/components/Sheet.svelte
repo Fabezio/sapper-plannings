@@ -4,6 +4,8 @@
 </script>
 
 <h3>{worker}</h3>
+
+<!-- <div class="text-center"> -->
 <table>
     <tr>
         <th colspan="2">jour</th>
@@ -38,6 +40,7 @@
     {/each}
 </table>
 
+<!-- </div> -->
 <style>
     .we {
         background: rgba(0, 127, 0, 0.33);
@@ -48,7 +51,7 @@
     }
     table {
         min-width: 760px;
-        max-width: 1200px;
+        /* max-width: 1200px; */
         margin: 0 auto;
         border: 2px solid black;
         border-collapse: collapse;
@@ -67,8 +70,14 @@
         max-width: 4rem;
     }
     @media screen and (max-width: 480px) {
+        /* .text-center {
+            margin: 0 auto;
+            text-align: center;
+        } */
         table {
-            width: 100%;
+            text-align: center;
+            max-width: 100%;
+            min-width: 100%;
             margin: 0;
         }
     }

@@ -8,6 +8,14 @@
     function toggleFilter() {
         return (handleFilter = !handleFilter);
     }
+    function selectEmployee(e) {
+        // displayPlanning = true;
+        console.log(e.target.innerText);
+        worker = worker.toUpperCase();
+        console.log(worker);
+        worker = e.target.innerText;
+        return worker;
+    }
 
     function displayFilteredList() {
         ADS.map((obj) => {
@@ -28,13 +36,22 @@
 
     const today = new Date().getDate();
     let worker = "";
-    $: worker = worker.toUpperCase();
+    // $: worker = worker.toUpperCase();
     $: if (namesList.includes(worker)) displayFilteredList();
 </script>
 
 <h2>Mois actuel: {mai.month}</h2>
+<div class="list">
+    {#each namesList as thisname}
+        <div class="el">
+            <button on:click={selectEmployee}>
+                {thisname}
+            </button>
+        </div>
+    {/each}
+</div>
 
-<div class="flex-filter">
+<!-- <div class="flex-filter">
     {#if handleFilter}
         <input
             class="input"
@@ -50,7 +67,7 @@
     <button class="round" title="filtrer avec mon nom" on:click={toggleFilter}>
         <img src={filter} alt="filtre" width="24" height="24" />
     </button>
-</div>
+</div> -->
 
 {#if namesList.includes(worker)}
     <Workers arr={adsFilter} />
@@ -103,5 +120,21 @@
     h2 {
         text-align: center;
         margin: 2rem auto;
+    }
+    button {
+        min-width: 7rem;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        border-radius: 3px;
+        padding: 4px;
+        font-size: 1rem;
+        margin: 1px;
+    }
+
+    .list {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 </style>

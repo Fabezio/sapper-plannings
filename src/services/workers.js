@@ -16,7 +16,7 @@ ADS.map(el => {
   const mois = ele[2]
   // weekDay.length = 3;
   // weekDay.length = 3;
-  console.log(ele)
+  // console.log(ele)
   // console.log(el.weekday)
   el.weekday = weekDay
   return el

@@ -2,9 +2,16 @@
     import { mai, ADS, namesList } from "../../services/workers.js";
     import Sheet from "../../components/Sheet.svelte";
     let worker = "";
-    function generatePlanning(obj) {
-        return (worker = obj);
+    let displayPlanning = false;
+    function generatePlanning(e) {
+        displayPlanning = true;
+        console.log(e.target.innerText);
+        worker = worker.toUpperCase();
+        console.log(worker);
+        worker = e.target.innerText;
+        return worker;
     }
+    // let isClosing = false;
     /* const formatter = Intl.DateTimeFormat("fr", {
         weekday: "short",
         day: "numeric",
@@ -20,37 +27,62 @@
         console.log(el.weekday);
         return el;
     }); */
-    $: worker = worker.toUpperCase();
 </script>
 
-<h2>Agents planifiés</h2>
-<p>Clique sur un nom ci-dessous</p>
-<div class="list">
-    {#each namesList as thisname}
-        <div class="el">
-            <button href="#{thisname}" on:click={() => (worker = thisname)}>
-                {thisname}
-            </button>
-        </div>
-    {/each}
-</div>
-
-{#if namesList.includes(worker)}
+{#if !displayPlanning}
+    <h2>Agents planifiés</h2>
+    <p>Clique sur un nom ci-dessous</p>
+    <div class="list">
+        {#each namesList as thisname}
+            <div class="el">
+                <button on:click={generatePlanning}>
+                    {thisname}
+                </button>
+            </div>
+        {/each}
+    </div>
+{:else if namesList.includes(worker)}
+    <button
+        class="float-right close"
+        title="fermer"
+        on:click={() => (displayPlanning = false)}>&times;</button
+    >
     <Sheet {worker} arr={ADS} />
 {:else if worker.length > 0 && !namesList.includes(worker)}
     nom non correspondant, vérifie l'orthoghraphe
 {/if}
 
 <style>
+    .close {
+        margin-right: 2rem;
+        border: none;
+        background: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    /* .close:hover[title] {
+        font-style: italic;
+        width: 1rem;
+        color: whitesmoke;
+        background: black;
+        content: "<";
+    } */
+
+    .close:hover {
+        rotate: 45deg;
+    }
+    .float-right {
+        display: block;
+        width: 100%;
+        text-align: right;
+    }
     button {
         min-width: 7rem;
         border: 1px solid rgba(0, 0, 0, 0.25);
         border-radius: 3px;
         padding: 4px;
-        font-size: 1.25 rem;
+        font-size: 1rem;
         margin: 1px;
-    }
-    .el {
     }
 
     .list {
@@ -58,9 +90,16 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
     }
     h2 {
         text-align: center;
         margin: 2rem auto;
+    }
+    @media screen and (max-width: 480px) {
+        button {
+            font-size: 0.8rem;
+            min-width: 6.25rem;
+        }
     }
 </style>

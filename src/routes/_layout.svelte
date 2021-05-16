@@ -43,4 +43,9 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
+	@media screen and (max-width: 480px) {
+		main {
+			padding: 1rem;
+		}
+	}
 </style>
