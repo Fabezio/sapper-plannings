@@ -10,7 +10,7 @@ const formatter = Intl.DateTimeFormat('fr', {
 })
 ADS.map(el => {
   const thisDay = new Date().setFullYear(2021, 4, el.jour)
-  let date = formatter.format(thisDay)
+  const date = formatter.format(thisDay)
   const ele = date.split(' ')
   const weekDay = ele[0]
   const mois = ele[2]
@@ -26,8 +26,7 @@ ADS.map(el => {
 
 const namesList = []
 function isInList (obj) {
-  if (!namesList.includes(obj.nom.toUpperCase()))
-    return namesList.push(obj.nom.toUpperCase())
+  if (!namesList.includes(obj.nom.toUpperCase())) { return namesList.push(obj.nom.toUpperCase()) }
 }
 ADS.map(({ agentJour, agentNuit, chefJour, chefNuit }) => {
   isInList(agentJour)

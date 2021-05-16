@@ -1,7 +1,7 @@
 <script>
     import Eff from "./Eff.svelte";
     export let arr;
-    export let worker;
+    // export let worker;
     const today = new Date().getDate();
     let seeAll = false;
     function dispatchAll() {
