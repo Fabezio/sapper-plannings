@@ -1,37 +1,37 @@
 <script>
     import Eff from "./Eff.svelte";
     export let arr;
+    export let worker;
     const today = new Date().getDate();
     let seeAll = false;
     function dispatchAll() {
         return (seeAll = !seeAll);
     }
-    /* const formatter = Intl.DateTimeFormat("fr", {
-        weekday: "short",
-        day: "numeric",
-        month: "short",
-        year: "numeric",
-    });
-    arr.map((el) => {
-        const thisDay = new Date().setFullYear(2021, 5, el.jour);
-        let weekDay = formatter.format(thisDay);
-        weekDay.length = 3;
-        weekDay.length = 3;
-        el.weekday = weekDay.slice(0, 3);
-        console.log(el.weekday);
-        return el;
-    }); */
-    console.log(arr);
+    console.log("nom:", arr);
 </script>
 
 <div class="right">
     <button class="" on:click={dispatchAll}
-        >voir {seeAll ? "3 premiers" : "tout"}</button
+        >voir {seeAll ? "depuis aujourd'hui" : "tout"}</button
     >
 </div>
 <!-- <div>{formatter.format(thisDay)}</div> -->
 
-{#each arr as { jour, weekday, agentJour, agentNuit, chefJour, chefNuit, ferie }}
+<!-- {#if arr.length }
+    <div class="flex bar warn">
+        TRAVAILLEUR <span class="italic">{worker}</span> NON PLANIFIE DANS CETTE
+        PERIODE
+    </div>
+{/if} -->
+{#each arr as { jour, weekday, agentJour, agentNuit, chefJour, chefNuit, ferie }, i}
+    <!-- {#if !jour && !worker}<hr />{/if} -->
+    <!-- {@debug i} -->
+    <!-- {#if jour < today && !seeAll}
+        <div class="flex bar warn">
+            TRAVAILLEUR <span class="italic">{worker}</span> NON PLANIFIE DANS CETTE
+            PERIODE
+        </div>
+    {/if} -->
     {#if seeAll}
         <div
             class="flex bar {(ferie ||
@@ -75,9 +75,17 @@
     .we {
         background: rgba(0, 127, 0, 0.33);
     }
+    .italic {
+        font-style: italic;
+        margin: 0 0.667rem;
+        font-weight: 600;
+    }
     .title {
         font-weight: bold;
         align-self: center;
+    }
+    .warn {
+        background: gold;
     }
     .bar {
         border: 2px ridge rgba(0, 0, 0, 0.25);
