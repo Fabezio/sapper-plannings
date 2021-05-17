@@ -10,11 +10,11 @@
     console.log("nom:", arr);
 </script>
 
-<div class="right">
+<!-- <div class="right">
     <button class="" on:click={dispatchAll}
         >voir {seeAll ? "depuis aujourd'hui" : "tout"}</button
     >
-</div>
+</div> -->
 <!-- <div>{formatter.format(thisDay)}</div> -->
 
 <!-- {#if arr.length }
