@@ -8,7 +8,7 @@
     <title>Arcs de Seine | {title}</title>
 </svelte:head>
 
-<h1>{mainTitle}<br /><br /> Planning {title}</h1>
+<h1>{mainTitle}<br /><br />{title}</h1>
 
 <style>
     h1 {

@@ -4,16 +4,16 @@
 	import Footer from "../components/containers/Footer.svelte";
 	// import { url } from "inspector";
 	const links = [
-		{ url: undefined, label: "Synthétique", visible: true },
+		{ url: undefined, label: "Planning Synthétique", visible: true },
 		{ url: "calendar", label: "Calendrier", visible: false },
 		{ url: "about", label: "About", visible: false },
 		{ url: "blog", label: "Blog", visible: false, prefetch: true },
 		{ url: "home", label: "Accueil", visible: false, prefetch: true },
 		{
 			url: "workers",
-			label: "Individuels",
+			label: "Plannings Individuels",
 			visible: true,
-			prefetch: true,
+			prefetch: false,
 		},
 	];
 
