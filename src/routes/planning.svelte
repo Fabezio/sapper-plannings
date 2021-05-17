@@ -42,6 +42,7 @@
 
 <h2>Mois actuel: {mai.month}</h2>
 {#if !displayPlanning}
+    <h2>Agents disponibles</h2>
     <div class="list">
         {#each namesList as thisname}
             <div class="el">

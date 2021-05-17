@@ -29,9 +29,10 @@
     }); */
 </script>
 
+<h2>Mois actuel: {mai.month}</h2>
 {#if !displayPlanning}
     <h2>Agents planifiés</h2>
-    <p>Clique sur un nom ci-dessous</p>
+    <!-- <p>Clique sur un nom ci-dessous</p> -->
     <div class="list">
         {#each namesList as thisname}
             <div class="el">

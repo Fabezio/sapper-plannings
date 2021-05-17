@@ -1,4 +1,5 @@
 <script>
+    const mainTitle = "Plannings MCTSP - Arcs de Seine";
     export let title;
     // import { title } from "process";
 </script>
@@ -6,7 +7,8 @@
 <svelte:head>
     <title>Arcs de Seine | {title}</title>
 </svelte:head>
-<h1>{title}</h1>
+
+<h1>{mainTitle}<br /><br /> Planning {title}</h1>
 
 <style>
     h1 {

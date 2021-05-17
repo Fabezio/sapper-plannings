@@ -38,6 +38,7 @@
 	main {
 		position: relative;
 		/* max-width: 56em; */
+		min-height: 47vh;
 		background-color: white;
 		padding: 2em;
 		margin: 0 auto;
