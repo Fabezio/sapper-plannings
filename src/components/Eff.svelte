@@ -51,6 +51,7 @@
     }
     @media screen and (max-width: 790px) {
         .vac {
+            display: none;
             padding-left: 0.75rem;
             padding-bottom: 1.75rem;
             align-items: center;

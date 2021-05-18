@@ -39,7 +39,7 @@
                 weekday === 'dim.') &&
                 'we'}"
         >
-            <div class="nb title">
+            <div class="date title">
                 <span>
                     {weekday}
                     {jour}
@@ -58,7 +58,7 @@
                 weekday === 'dim.') &&
                 'we'}"
         >
-            <div class="nb title">
+            <div class="date title">
                 {weekday}
                 {jour}
             </div>
@@ -89,7 +89,8 @@
     }
     .bar {
         border: 2px ridge rgba(0, 0, 0, 0.25);
-        margin: 4px 0;
+        max-width: 760px;
+        margin: 4px auto;
         border-radius: 7px;
         box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
     }
@@ -99,8 +100,9 @@
         justify-content: center;
     }
 
-    .nb {
+    .date {
         padding: 1rem;
+        max-width: 7rem;
     }
     .boxes {
         display: flex;
@@ -127,4 +129,16 @@
     button {
         text-transform: uppercase;
     }
+    @media screen and (max-width: 480px)  {
+        .bar {
+            max-width: 480px;
+        }
+        .boxes {
+            width: auto;
+        }
+        .date {
+            margin: 0;
+        }
+    }
+
 </style>

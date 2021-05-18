@@ -252,4 +252,27 @@ const plannings = {
   }
 }
 
+const formatter = Intl.DateTimeFormat('fr', {
+  weekday: 'short',
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric'
+})
+
+
+plannings.mai.ADS.map(el => {
+  const thisDay = new Date().setFullYear(2021, 4, el.jour)
+  const date = formatter.format(thisDay)
+  const ele = date.split(' ')
+  const weekDay = ele[0]
+  const mois = ele[2]
+  // weekDay.length = 3;
+  // weekDay.length = 3;
+  // console.log(ele)
+  // console.log(el.weekday)
+  el.weekday = weekDay
+  return el
+  // el.weekday = weekDay.slice(0, 3)
+  // return el
+})
 export default plannings
