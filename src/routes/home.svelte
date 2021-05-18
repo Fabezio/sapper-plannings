@@ -1,5 +1,5 @@
 <script>
-	import Counter from "../components/Counter/index.svelte";
+	// import Counter from "../components/Counter/index.svelte";
 </script>
 
 <section>

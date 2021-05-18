@@ -2,7 +2,7 @@
     import { mai, ADS, namesList } from "../services/workers.js";
     import filter from "../../static/filter.png";
     import Workers from "../components/Workers.svelte";
-    let displayPlanning = false;
+    let displayPlanning = true;
     let adsFilter = [];
     let handleFilter = false;
     function toggleFilter() {

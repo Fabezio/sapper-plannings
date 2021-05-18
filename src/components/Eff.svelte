@@ -7,7 +7,7 @@
 
 <div class="card">
     <div class="vac">{vac}</div>
-    <div class="col">
+    <div class="box">
         <div class="bold">
             <Ident id={chef} />
         </div>
@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<!-- <div class="col">
+<!-- <div class="box">
     <div class="bold">
         {nameDisplay(chefNuit)}
     </div>
@@ -30,8 +30,10 @@
     .card {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        text-align: left;
     }
-    .col {
+    .box {
         text-transform: uppercase;
         padding: 0.5rem 16px;
         display: flex;
@@ -52,10 +54,11 @@
     @media screen and (max-width: 790px) {
         .vac {
             display: none;
-            padding-left: 0.75rem;
+            /* padding-left: 0.75rem; */
             padding-bottom: 1.75rem;
             align-items: center;
             font-size: 1.25rem;
         }
+        .box {min-width: 6rem; padding :8px 0;}
     }
 </style>

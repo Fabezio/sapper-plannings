@@ -1,6 +1,6 @@
 <script>
 	import Head from "../components/containers/Head.svelte";
-	import Nav from "../components/containers/Nav.svelte";
+	// import Nav from "../components/containers/Nav.svelte";
 	import Footer from "../components/containers/Footer.svelte";
 	// import { url } from "inspector";
 	const links = [
@@ -20,7 +20,7 @@
 	export let segment;
 </script>
 
-<Nav {segment} {links} />
+<!-- <Nav {segment} {links} /> -->
 {#each links as { url, label }}
 	{#if url === segment}
 		<Head title={label || "ajoute un titre"} />
