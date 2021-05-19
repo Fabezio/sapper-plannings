@@ -1,5 +1,5 @@
 <script>
-    import newPlanning from "../../data/newPlanning"
-
+    import newPlanning from "../../data/newPlanning";
 </script>
-{@debug newPlanning}
+
+<!-- {@debug newPlanning} -->

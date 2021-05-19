@@ -1,8 +1,9 @@
 <script>
     import { mai, ADS, namesList } from "../services/workers.js";
-    import filter from "../../static/filter.png";
+    // import filter from "../../static/filter.png";
     import Workers from "../components/Workers.svelte";
     let displayPlanning = true;
+    let isToday = true;
     let adsFilter = [];
     let handleFilter = false;
     function toggleFilter() {
@@ -29,16 +30,16 @@
                 // console.log(obj);
             }
         });
-        
+
         return adsFilter;
     }
     const today = new Date().getDate();
-    let joursDispo = []
-    ADS.map(({jour}) => {
+    let joursDispo = [];
+    ADS.map(({ jour }) => {
         if (jour >= today) {
-            joursDispo = [...joursDispo, jour]
+            joursDispo = [...joursDispo, jour];
         }
-    })
+    });
     $: if (!handleFilter || worker === "") adsFilter = [];
 
     let worker = "";
@@ -58,28 +59,27 @@
             </div>
         {/each}
     </div>
-    <h2 class="subtitle">Prochain Jours</h2>
+    <h2 class="subtitle">Jours restants</h2>
+
     <div class="list">
         {#each joursDispo as jour}
-        <span class="jour">{jour >= today && jour }</span>
-            
+            <span class="jour">{jour >= today && jour}</span>
         {/each}
     </div>
 {:else}
-<section>
-    <button
-    class="float-right close"
-    title="fermer"
-    on:click={() => (displayPlanning = false)}>&times;</button
-    >
-    {#if namesList.includes(worker)}
-    <Workers {worker} arr={adsFilter} />
-    <!-- {:else if adsFilter.length === 0} -->
-    {/if}
-    {#if adsFilter.length === 0}
-    <Workers {worker} arr={ADS} />
-    {/if}
-    
+    <section>
+        <button
+            class="float-right close"
+            title="fermer"
+            on:click={() => (displayPlanning = false)}>&times;</button
+        >
+        {#if namesList.includes(worker)}
+            <Workers {isToday} {worker} arr={adsFilter} />
+            <!-- {:else if adsFilter.length === 0} -->
+        {/if}
+        {#if adsFilter.length === 0}
+            <Workers isToday={!isToday} {worker} arr={ADS} />
+        {/if}
     </section>
 {/if}
 
@@ -96,14 +96,13 @@
 
         margin: 0 1rem;
     }
-    section{
-max-width: 800px;
-margin: 0 auto;
+    section {
+        max-width: 800px;
+        margin: 0 auto;
     }
     .subtitle {
-        font-variant:normal;
+        font-variant: normal;
         font-weight: 300;
-        
     }
     @media screen and (max-width: 480px) {
         h2 {
@@ -116,7 +115,7 @@ margin: 0 auto;
     }
     h2 {
         text-transform: capitalize;
-        font-variant:small-caps;
+        font-variant: small-caps;
         text-align: center;
         margin: 2rem auto;
     }

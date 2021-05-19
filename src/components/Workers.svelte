@@ -1,14 +1,17 @@
 <script>
-    
+    import formatter from "../services/dateTimeFormatter";
     import Bar from "./Bar.svelte";
+
+    export let isToday;
     export let arr;
-    // export let worker;
-    const today = new Date().getDate();
+    const date = new Date();
+    const today = date.getDate();
     let seeAll = false;
     function dispatchAll() {
         return (seeAll = !seeAll);
     }
-    console.log("nom:", arr);
+
+    // console.log("nom:", arr);
 </script>
 
 <!-- <div class="right">
@@ -24,6 +27,7 @@
         PERIODE
     </div>
 {/if} -->
+<h3>Aujourd'hui: {formatter.format(date)}</h3>
 
 {#each arr as el, i}
     <!-- {#if !jour && !worker}<hr />{/if} -->
@@ -36,10 +40,9 @@
     {/if} -->
     {#if seeAll}
         <Bar {el} />
-        
-        {:else if el.jour >= today}
+    {:else if el.jour === today && isToday}
         <Bar {el} />
-        
+    {:else if el.jour >= today && !isToday}
+        <Bar {el} />
     {/if}
 {/each}
-

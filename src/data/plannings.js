@@ -1,4 +1,5 @@
 // import * from './users'
+import formatter from '../services/dateTimeFormatter'
 
 const chaouti = { nom: 'Chaouti', prenom: 'Brahim' }
 const coulibaly = { nom: 'Coulibaly', prenom: 'Oumar' }
@@ -251,14 +252,6 @@ const plannings = {
     ]
   }
 }
-
-const formatter = Intl.DateTimeFormat('fr', {
-  weekday: 'short',
-  day: 'numeric',
-  month: 'short',
-  year: 'numeric'
-})
-
 
 plannings.mai.ADS.map(el => {
   const thisDay = new Date().setFullYear(2021, 4, el.jour)
