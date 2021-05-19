@@ -1,5 +1,6 @@
 <script>
-    import newPlanning from "../../data/newPlanning";
+    import planning from "../../data/newPlanning2";
 </script>
+<h1>mise à jour planning</h1>
 
-<!-- {@debug newPlanning} -->
+ {@debug planning}

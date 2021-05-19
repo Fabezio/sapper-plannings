@@ -2,6 +2,7 @@
 	import Head from "../components/containers/Head.svelte";
 	// import Nav from "../components/containers/Nav.svelte";
 	import Footer from "../components/containers/Footer.svelte";
+	import "smelte/src/tailwind.css"
 	// import { url } from "inspector";
 	const links = [
 		{ url: undefined, label: "Planning Synthétique", visible: true },

@@ -1,14 +1,14 @@
 import plannings from './plannings'
 
 const { ADS } = plannings.mai
-let newPlanning = {
+const newPlanning = {
   site: 'Arcs de Seine',
   mois: [
     { nom: 'janvier' },
     { nom: 'février' },
     { nom: 'mars' },
     { nom: 'avril' },
-    { nom: 'mai', jours: {} },
+    { nom: 'mai', jours: [] },
     { nom: 'juin' },
     { nom: 'juillet' },
     { nom: 'aout' },
@@ -20,7 +20,6 @@ let newPlanning = {
 }
 ADS.map(
   ({ jour, agentJour, agentNuit, chefJour, chefNuit, weekday }, index) => {
-    const { jours } = newPlanning.mois[4]
     const newDay = {
       jour,
       weekday,
@@ -51,11 +50,10 @@ ADS.map(
         }
       ]
     }
-    jours.push(newDay)
-
-    console.log(newPlanning)
+    newPlanning.mois[4].jours = [...newPlanning.mois[4].jours, newDay]
   }
 )
+// console.log(JSON.stringify(newPlanning))
 // newPlanning.mois[4]
 // newPlanning.mois[4].jours.map(jour => console.log(jour.jour))
 // newPlanning = JSON.stringify(plannings)

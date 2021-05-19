@@ -3,7 +3,6 @@ import plannings from '../data/plannings'
 const { mai } = plannings
 const { ADS } = mai
 
-
 const namesList = []
 function isInList (obj) {
   if (!namesList.includes(obj.nom.toUpperCase())) { return namesList.push(obj.nom.toUpperCase()) }
