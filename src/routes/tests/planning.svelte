@@ -21,7 +21,7 @@
 
     <h2 class="display-3">{mai.nom}</h2>
     <Title3>
-        aujourd'hui: {today}
+        Aujourd'hui: {today}
     </Title3>
 
     {@debug today}

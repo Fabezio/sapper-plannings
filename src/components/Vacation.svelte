@@ -3,9 +3,10 @@
     const { period, service, employment, employee } = vacation;
 </script>
 
-<div class="">
+<div class="{employment ==='SSIAP 2' && 'font-weight-bold'}">
     <!-- {period} -->
-    <!-- {service} -->
-    {employment}
+    <!-- {service}
+        {employment}
+    -->
     {employee.nom}, {employee.prenom}
 </div>

@@ -1,5 +1,5 @@
 <script>
-    import Planning from "./planning.svelte";
+    import Planning from "./tests/planning.svelte";
 </script>
 
 <Planning />

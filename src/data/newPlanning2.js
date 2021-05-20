@@ -19,6 +19,7 @@ const planning = {
         {
           jour: 1,
           weekday: 'sam.',
+          ferie: true,
           employees: [
             {
               period: '07h-19h',
@@ -312,6 +313,7 @@ const planning = {
         },
         {
           jour: 8,
+          ferie: true,
           weekday: 'sam.',
           employees: [
             {
@@ -522,6 +524,7 @@ const planning = {
         },
         {
           jour: 13,
+          ferie: true,
           weekday: 'jeu.',
           employees: [
             {
@@ -984,6 +987,7 @@ const planning = {
         },
         {
           jour: 24,
+          ferie: true,
           weekday: 'lun.',
           employees: [
             {
