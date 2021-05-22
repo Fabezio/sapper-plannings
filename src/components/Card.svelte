@@ -2,19 +2,15 @@
     import Vacation from "./Vacation.svelte";
     export let str = "";
     export let employees = [];
-    export let weekday
-    export let ferie
-    function isWeekend (day) {
-        if(day=== 'sam.' || day==='dim.') return 'bg-success' 
-        else if (ferie) return 'bg-info'
-    }
+    let color = "primary";
+    if (str !== "07h-19h") color = "dark";
 </script>
 
-<div class="card text-capitalize p-2 {isWeekend(weekday)}" style="max-width:  16rem;">
-    <div class="card-title">{str}</div>
+<div class="text-capitalize p-2 " style="max-width:  16rem; min-width: 11rem;">
+    <!-- <div class="text-{color}">{str}</div> -->
     {#each employees as vacation, i}
         {#if vacation.period === str}
-            <Vacation {vacation} />
+            <Vacation {color} {vacation} />
         {/if}
     {/each}
 </div>
