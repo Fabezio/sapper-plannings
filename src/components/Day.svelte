@@ -3,16 +3,21 @@
     import Card from "./Card.svelte";
     export let day;
     day.color = "default";
-    let { jour, weekday, employees, ferie, color } = day;
+    day.border = "secondary";
+    let { jour, weekday, employees, ferie, color, border } = day;
     $: if (weekday === "sam." || weekday === "dim." || ferie) {
         color = "success";
+        border = "success";
     }
 </script>
 
 <div
-    class="card-deck mx-auto border-2 border-dark p-1 alert alert-{color} shadow-sm "
+    class="card-deck mx-auto border-2 border-{border} p-1 alert alert-{color} shadow-sm "
 >
-    <span class="text-center mt-2" style="min-width: 5rem;">
+    <span
+        class="text-center mt-2 font-weight-bold text-dark  "
+        style="min-width: 5rem;"
+    >
         {weekday}
         {jour}
     </span>

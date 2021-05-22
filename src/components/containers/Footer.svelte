@@ -4,19 +4,25 @@
 </script>
 
 <!-- <div class="pre-footer" /> -->
-<footer>
+<footer
+    class="text-center text-light d-flex bottom-fixed justify-content-center bg-secondary opacity-75 border-top p-3"
+>
     <p>
         plannings-arcsdeseine &copy; {year}
     </p>
-    <p>
-        <a href="https://github.com/Fabezio/sapper-plannings" target="_blank">
+    <p class="ml-3">
+        <a
+            class="text-light bg-transparent"
+            href="https://github.com/Fabezio/sapper-plannings"
+            target="_blank"
+        >
             code source
         </a>
     </p>
 </footer>
 
 <style>
-    a {
+    /* a {
         font-weight: 500;
         padding: 4px 8px;
         border-radius: 4px;
@@ -33,10 +39,10 @@
     }
     .pre-footer {
         position: fixed;
-        /* bottom: 0; */
+
         height: 3rem;
-    }
-    footer {
+    } */
+    /* footer {
         position: relative;
         margin-top: 3rem;
         z-index: 10;
@@ -44,12 +50,12 @@
         height: 3rem;
         width: 100%;
         padding: 0.25rem;
-        /* height: 3rem; */
+        
         margin-bottom: 0;
         display: flex;
         opacity: 1;
         justify-content: space-evenly;
         text-align: center;
         background: rgba(0, 0, 0, 0.05);
-    }
+    } */
 </style>
