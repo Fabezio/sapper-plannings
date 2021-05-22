@@ -12,7 +12,7 @@
 </script>
 
 <div class="text-{color} {employment === 'SSIAP 2' && 'font-weight-bold'}">
-    {@debug period}
+    <!-- {@debug period} -->
     <!-- {period} -->
     <!-- {service}
         {employment}

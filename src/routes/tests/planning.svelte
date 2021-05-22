@@ -9,21 +9,32 @@
     const date = new Date();
     const today = formatter.format(date);
     const dayNumber = today.split(" ")[1];
-
+    const thisDay = today.split(" ")[1];
     // console.log( planning.mois[4])
     // Liste des agents
     let namesList = [];
     jours.map(({ employees, jour }) => {
-        employees.map(({ employee }) => {
-            const { nom, prenom } = employee;
-            if (!namesList.includes(nom)) {
-                namesList = [...namesList, nom];
-            }
-        });
+        if (jour >= thisDay) {
+            employees.map(({ employee }) => {
+                const { nom, prenom } = employee;
+                if (!namesList.includes(nom.toUpperCase())) {
+                    namesList = [...namesList, nom.toUpperCase()];
+                }
+            });
+        }
     });
     namesList.sort();
+    let thisPerson = "";
+    // function selectPerson(e) {
+    //     if (e.target.person) {
+    //         return (thisPerson = e.target.person);
+    //     }
+    // }
+    // selectPerson();
     // namesList = [...Array(20).keys()].join(" ");
 </script>
+
+<!-- {@debug thisPerson} -->
 
 <div class="container">
     <!-- <h1>mise à jour planning</h1> -->
@@ -33,13 +44,16 @@
 <div class='badge badge-danger rounded'>balise</div> -->
 
     <h2 class="display-4 text-center text-uppercase">Mois de {mai.nom}</h2>
+    <!-- <p>{namesList.join(" ")}</p> -->
     <div class="d-flex flex-wrap justify-content-start">
         {#each namesList as person}
             <!-- <p>{person.join(", ")}</p> -->
             <button class="btn btn-sm btn-outline-info mr-1 mb-1"
-                >{person.toUpperCase()}</button
+                >{person}</button
             >
+            <!-- {@debug thisPerson} -->
         {/each}
+        <p>{thisPerson}</p>
     </div>
     <Title3>
         Aujourd'hui: {today}
@@ -50,6 +64,12 @@
 
     {#each jours as day}
         {#if day.jour == dayNumber}
+            <Day {day} />
+        {/if}
+    {/each}
+    <Title3>Vacations restantes</Title3>
+    {#each jours as day}
+        {#if day.jour >= thisDay}
             <Day {day} />
         {/if}
     {/each}
