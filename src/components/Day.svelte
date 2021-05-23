@@ -21,6 +21,6 @@
         {weekday}
         {jour}
     </span>
-    <Card {weekday} {ferie} {employees} str="07h-19h" />
-    <Card {weekday} {ferie} {employees} str="19h-07h" />
+    <Card {employees} str="07h-19h" />
+    <Card {employees} str="19h-07h" />
 </div>
