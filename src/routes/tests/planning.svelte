@@ -4,6 +4,7 @@
     import Day from "../../components/Day.svelte";
     import Title3 from "../../components/headings/Title3.svelte";
     import Bar from "../../components/Bar.svelte";
+    // import { each } from "svelte/internal";
 
     const mai = planning.mois[4];
     const { jours } = mai;
@@ -26,7 +27,7 @@
         // if (e.target.innerText) {
         // }
     }
-    $: jours.map(({ employees, jour }) => {
+    $: jours.map(({ employees, jour, weekday }) => {
         if (jour >= thisDay) {
             employees.map(({ employee }) => {
                 const { nom, prenom } = employee;
@@ -34,7 +35,15 @@
                     thisPerson.length > 0 &&
                     thisPerson == employee.nom.toUpperCase()
                 ) {
-                    filteredDays = [...filteredDays, { jour, nom: thisPerson }];
+                    filteredDays = [
+                        ...filteredDays,
+                        {
+                            jour,
+                            weekday,
+                            employees,
+                        },
+                    ];
+                    return filteredDays;
                 }
                 if (!namesList.includes(nom.toUpperCase())) {
                     namesList = [...namesList, nom.toUpperCase()];
@@ -47,7 +56,7 @@
     // namesList = [...Array(20).keys()].join(" ");
 </script>
 
-<!-- {@debug thisPerson} -->
+{@debug filteredDays}
 
 <div class="container">
     <!-- <h1>mise à jour planning</h1> -->
@@ -77,11 +86,18 @@
     <!-- <Title3>Agents travaillant ce jour:</Title3> -->
 
     {#each jours as day}
-        {#if day.jour == dayNumber && thisPerson.length > 0}
+        {#if day.jour >= dayNumber && thisPerson.length > 0}
             <h3>Prochaines vacations de {thisPerson}</h3>
-            {#each filteredDays as { jour, nom }}
-                <p>{jour} {nom}</p>
-            {/each}
+            <Day {filteredDays} />
+            <!-- {#each filteredDays as { jour, weekday, employees }}
+                <p>
+                    {weekday}
+                    {jour}:
+                    {#each employees as employee}
+                        {employee.join(", ")}
+                    {/each}
+                </p>
+            {/each} -->
             {@debug filteredDays}
         {:else if day.jour == dayNumber}
             <Day {day} />
