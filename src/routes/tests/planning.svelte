@@ -19,38 +19,45 @@
     let thisPerson = "";
     let filteredDays = [];
     function selectPerson(e) {
+        console.log(e.target)
+        
         if (thisPerson.length > 0) {
-            filteredDays = [];
+            thisPerson=""
         }
+        if (thisPerson=== "") {
+            filteredDays = []
+
+        }
+       
         thisPerson = e.target.innerText;
         return thisPerson;
         // if (e.target.innerText) {
         // }
     }
-    $: jours.map(({ employees, jour, weekday }) => {
+    $: jours.map((day) => {
+        
+        const { employees, jour, weekday } = day
         if (jour >= thisDay) {
             employees.map(({ employee }) => {
                 const { nom, prenom } = employee;
+                
                 if (
                     thisPerson.length > 0 &&
                     thisPerson == employee.nom.toUpperCase()
                 ) {
                     filteredDays = [
                         ...filteredDays,
-                        {
-                            jour,
-                            weekday,
-                            employees,
-                        },
+                        day
                     ];
-                    return filteredDays;
                 }
                 if (!namesList.includes(nom.toUpperCase())) {
                     namesList = [...namesList, nom.toUpperCase()];
                 }
+                
             });
         }
     });
+    
 
     // selectPerson();
     // namesList = [...Array(20).keys()].join(" ");
@@ -86,29 +93,43 @@
     <!-- <Title3>Agents travaillant ce jour:</Title3> -->
 
     {#each jours as day}
-        {#if day.jour >= dayNumber && thisPerson.length > 0}
-            <h3>Prochaines vacations de {thisPerson}</h3>
-            <Day {filteredDays} />
-            <!-- {#each filteredDays as { jour, weekday, employees }}
-                <p>
-                    {weekday}
-                    {jour}:
-                    {#each employees as employee}
-                        {employee.join(", ")}
-                    {/each}
-                </p>
-            {/each} -->
-            {@debug filteredDays}
-        {:else if day.jour == dayNumber}
+        
+        {#if day.jour == dayNumber}
             <Day {day} />
         {/if}
     {/each}
-    <Title3>Vacations restantes</Title3>
-    {#each jours as day}
+
+    {#if thisPerson.length > 0}
+    <h3>Prochaines vacations de {thisPerson}</h3>
+    <button class="btn btn-warning" on:click={()=> filteredDays=[]}>effacer</button>
+    {#each filteredDays as day}
+    {#if day.jour >= thisDay}
+
+    <Day {day} />
+    <!-- {#each filteredDays as { jour, weekday, employees }}
+        <p>
+            {weekday}
+            {jour}:
+            {#each employees as employee}
+            {employee.join(", ")}
+            {/each}
+        </p>
+        {/each} -->
+        {@debug filteredDays}
+        
+        
+        
+        {/if}
+        {/each}
+        {:else}
+        <Title3>Vacations restantes</Title3>
+        {#each jours as day}
         {#if day.jour >= thisDay}
-            <Day {day} />
+        <Day {day} />
         {/if}
-    {/each}
+        {/each}
+        {/if}
+
     <Title3>Planning général</Title3>
     {#each jours as day}
         <Day {day} />
