@@ -1,5 +1,5 @@
 <script>
-    import formatter from "../services/dateTimeFormatter";
+    import { litteralFormatter } from "../services/dateTimeFormatter";
     import Bar from "./Bar.svelte";
 
     export let isToday;
@@ -27,7 +27,7 @@
         PERIODE
     </div>
 {/if} -->
-<h3>Aujourd'hui: {formatter.format(date)}</h3>
+<h3>Aujourd'hui: {litteralFormatter.format(date)}</h3>
 
 {#each arr as el, i}
     <!-- {#if !jour && !worker}<hr />{/if} -->

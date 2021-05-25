@@ -1,0 +1,27 @@
+const workers = {
+  chaouti: { nom: 'Chaouti', prenom: 'Brahim' },
+  coulibaly: { nom: 'Coulibaly', prenom: 'Oumar' },
+  dossou: { nom: 'Dossou', prenom: 'Victorin' },
+  kalle: { nom: 'Kalle', prenom: 'Oumar' },
+  lhomme: { nom: 'Lhomme', prenom: 'Pascal' },
+  renaud: { nom: 'Renaud', prenom: 'Cyril' },
+  riquet: { nom: 'Riquet', prenom: 'Fabrice' },
+  bonnet: { nom: 'Bonnet', prenom: 'Sébastien' },
+  disci: { nom: 'Disci', prenom: 'Alex' },
+  frahi: { nom: 'Frahi', prenom: 'Djamal' },
+  jean: { nom: 'Jean', prenom: 'Willy' },
+  ketir: { nom: 'Ketir', prenom: 'Djamel' },
+  khan: { nom: 'Khan', prenom: 'Usman' },
+  koite: { nom: 'Koite', prenom: 'Cheikh Makhfou' },
+  kone: { nom: 'Kone', prenom: 'Oumar' },
+  kuhosa: { nom: 'Kuhosa', prenom: 'Germain' },
+  vincent: { nom: 'Vincent', prenom: 'Olivier' },
+  bocum: { nom: 'Bocum', prenom: 'Hamidou' },
+  perm: { nom: 'permanence', prenom: '' },
+  perm2: { nom: 'permanence 2', prenom: '' },
+  lukombo: { nom: 'Lukombo', prenom: 'Miguel' },
+  boussetta: { nom: 'Boussetta', prenom: 'Sami' },
+  bayou: { nom: 'Bayou', prenom: 'Rachid' },
+  tachfine: { nom: 'Tachfine', prenom: 'Ayoub' }
+}
+export default workers

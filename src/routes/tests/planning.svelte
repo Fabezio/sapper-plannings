@@ -1,17 +1,36 @@
 <script>
     import planning from "../../data/newPlanning2";
-    import formatter from "../../services/dateTimeFormatter";
+    import {
+        numericFormatter,
+        litteralFormatter,
+    } from "../../services/dateTimeFormatter";
     import Day from "../../components/Day.svelte";
     import Title3 from "../../components/headings/Title3.svelte";
     import Bar from "../../components/Bar.svelte";
     // import { each } from "svelte/internal";
-
-    const mai = planning.mois[4];
-    const { jours } = mai;
+    let monthNb;
+    $: monthNb = 4;
     const date = new Date();
-    const today = formatter.format(date);
-    const dayNumber = today.split(" ")[1];
+    const today = numericFormatter.format(date);
+    const thisMonth = today.split(" ")[2];
     const thisDay = today.split(" ")[1];
+
+    const { mois } = planning;
+    // let currentMonth;
+    // $: currentMonth = planning.mois[monthNb];
+    let { jours } = planning.mois[4];
+    function previousMonth() {
+        return (monthNb -= 1);
+    }
+    function nextMonth() {
+        return (monthNb += 1);
+    }
+    // mois.map((month) => {
+    //     const {jours , nom } = month;
+    //     console.log(month);
+
+    // });
+
     // console.log( planning.mois[4])
     // Liste des agents
     let namesList = [];
@@ -19,45 +38,50 @@
     let thisPerson = "";
     let filteredDays = [];
     function selectPerson(e) {
-        console.log(e.target)
-        
-        if (thisPerson.length > 0) {
-            thisPerson=""
-        }
-        if (thisPerson=== "") {
-            filteredDays = []
+        console.log(e.target);
 
+        if (thisPerson.length > 0) {
+            thisPerson = "";
         }
-       
+        if (filteredDays.length > 0) {
+            filteredDays = [];
+        }
         thisPerson = e.target.innerText;
-        return thisPerson;
+        jours.map((day) => {
+            const { employees, jour, weekday } = day;
+            if (jour >= thisDay) {
+                employees.map(({ employee }) => {
+                    const { nom, prenom } = employee;
+
+                    if (
+                        thisPerson.length > 0 &&
+                        thisPerson == employee.nom.toUpperCase()
+                    ) {
+                        filteredDays = [...filteredDays, day];
+                    }
+                    if (!namesList.includes(nom.toUpperCase())) {
+                        namesList = [...namesList, nom.toUpperCase()];
+                    }
+                });
+            }
+        });
+
+        return thisPerson, filteredDays;
         // if (e.target.innerText) {
         // }
     }
     $: jours.map((day) => {
-        
-        const { employees, jour, weekday } = day
+        const { employees, jour, weekday } = day;
         if (jour >= thisDay) {
             employees.map(({ employee }) => {
                 const { nom, prenom } = employee;
-                
-                if (
-                    thisPerson.length > 0 &&
-                    thisPerson == employee.nom.toUpperCase()
-                ) {
-                    filteredDays = [
-                        ...filteredDays,
-                        day
-                    ];
-                }
+
                 if (!namesList.includes(nom.toUpperCase())) {
                     namesList = [...namesList, nom.toUpperCase()];
                 }
-                
             });
         }
     });
-    
 
     // selectPerson();
     // namesList = [...Array(20).keys()].join(" ");
@@ -72,7 +96,11 @@
 <button class='btn-sm btn-warning' >bouton</button>
 <div class='badge badge-danger rounded'>balise</div> -->
 
-    <h2 class="display-4 text-center text-uppercase">Mois de {mai.nom}</h2>
+    <h2 class="display-4 text-center text-uppercase">
+        <button on:click={previousMonth}>&larr;</button>
+        Mois de {mois.nom}
+        <button on:click={nextMonth}>&rarr;</button>
+    </h2>
     <!-- <p>{namesList.join(" ")}</p> -->
     <div class="d-flex flex-wrap justify-content-start">
         {#each namesList as person}
@@ -93,20 +121,20 @@
     <!-- <Title3>Agents travaillant ce jour:</Title3> -->
 
     {#each jours as day}
-        
-        {#if day.jour == dayNumber}
+        {#if day.jour == thisDay}
             <Day {day} />
         {/if}
     {/each}
 
     {#if thisPerson.length > 0}
-    <h3>Prochaines vacations de {thisPerson}</h3>
-    <button class="btn btn-warning" on:click={()=> filteredDays=[]}>effacer</button>
-    {#each filteredDays as day}
-    {#if day.jour >= thisDay}
-
-    <Day {day} />
-    <!-- {#each filteredDays as { jour, weekday, employees }}
+        <h3>Prochaines vacations de {thisPerson}</h3>
+        <button class="btn btn-warning" on:click={() => (filteredDays = [])}
+            >effacer</button
+        >
+        {#each filteredDays as day}
+            {#if day.jour >= thisDay}
+                <Day {day} />
+                <!-- {#each filteredDays as { jour, weekday, employees }}
         <p>
             {weekday}
             {jour}:
@@ -115,20 +143,17 @@
             {/each}
         </p>
         {/each} -->
-        {@debug filteredDays}
-        
-        
-        
-        {/if}
+                {@debug filteredDays}
+            {/if}
         {/each}
-        {:else}
+    {:else}
         <Title3>Vacations restantes</Title3>
         {#each jours as day}
-        {#if day.jour >= thisDay}
-        <Day {day} />
-        {/if}
+            {#if day.jour >= thisDay}
+                <Day {day} />
+            {/if}
         {/each}
-        {/if}
+    {/if}
 
     <Title3>Planning général</Title3>
     {#each jours as day}

@@ -1,7 +1,15 @@
-const formatter = Intl.DateTimeFormat('fr', {
+const litteralOptions = {
   weekday: 'short',
   day: 'numeric',
   month: 'short',
   year: 'numeric'
-})
-export default formatter
+}
+const numericOptions = {
+  // weekday: 'short',
+  day: 'numeric',
+  month: 'numeric',
+  year: 'numeric'
+}
+
+export const numericFormatter = Intl.DateTimeFormat('fr', numericOptions)
+export const litteralFormatter = Intl.DateTimeFormat('fr', litteralOptions)
