@@ -237,7 +237,7 @@ plannings.mai.ADS.map(el => {
   const date = litteralFormatter.format(thisDay)
   const ele = date.split(' ')
   const weekDay = ele[0]
-  const mois = ele[2]
+  // const mois = ele[2]
   // weekDay.length = 3;
   // weekDay.length = 3;
   // console.log(ele)

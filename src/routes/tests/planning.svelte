@@ -1,5 +1,6 @@
 <script>
     import planning from "../../data/newPlanning2";
+    import Month from "../../components/Month.svelte";
     import {
         numericFormatter,
         litteralFormatter,
@@ -7,17 +8,28 @@
     import Day from "../../components/Day.svelte";
     import Title3 from "../../components/headings/Title3.svelte";
     import Bar from "../../components/Bar.svelte";
-    // import { each } from "svelte/internal";
+    import Card from "../../components/Card.svelte";
+
+    // planning.mois.map(({ jours, nom }, index) => {
+    //     if (!jours) return;
+    //     console.log(typeof jours);
+    //     jours.map(({ jour, weekday }, j) => {
+    //         const thatDay = new Date().setFullYear(2021, index, j + 1);
+    //         const date = litteralFormatter.format(thatDay);
+    //         weekday = date.split(" ")[0];
+    //         // console.log(weekday, j + 1);
+    //     });
+
+    // });
+
     let monthNb;
-    $: monthNb = 4;
+    $: monthNb = 5;
     const date = new Date();
     const today = numericFormatter.format(date);
     const thisMonth = today.split(" ")[2];
     const thisDay = today.split(" ")[1];
 
     const { mois } = planning;
-    // let currentMonth;
-    // $: currentMonth = planning.mois[monthNb];
     let { jours } = planning.mois[4];
     function previousMonth() {
         return (monthNb -= 1);
@@ -25,14 +37,7 @@
     function nextMonth() {
         return (monthNb += 1);
     }
-    // mois.map((month) => {
-    //     const {jours , nom } = month;
-    //     console.log(month);
 
-    // });
-
-    // console.log( planning.mois[4])
-    // Liste des agents
     let namesList = [];
     namesList.sort();
     let thisPerson = "";
@@ -67,8 +72,6 @@
         });
 
         return thisPerson, filteredDays;
-        // if (e.target.innerText) {
-        // }
     }
     $: jours.map((day) => {
         const { employees, jour, weekday } = day;
@@ -82,43 +85,32 @@
             });
         }
     });
-
-    // selectPerson();
-    // namesList = [...Array(20).keys()].join(" ");
 </script>
 
+<Month month={monthNb} />
+
+<!-- 
 {@debug filteredDays}
 
 <div class="container">
-    <!-- <h1>mise à jour planning</h1> -->
-    <!-- <button class='btn btn-primary' >bouton</button>
-<button class='btn-lg btn-success' >bouton</button>
-<button class='btn-sm btn-warning' >bouton</button>
-<div class='badge badge-danger rounded'>balise</div> -->
-
     <h2 class="display-4 text-center text-uppercase">
         <button on:click={previousMonth}>&larr;</button>
         Mois de {mois.nom}
         <button on:click={nextMonth}>&rarr;</button>
     </h2>
-    <!-- <p>{namesList.join(" ")}</p> -->
+
     <div class="d-flex flex-wrap justify-content-start">
         {#each namesList as person}
-            <!-- <p>{person.join(", ")}</p> -->
             <button
                 class="btn btn-sm btn-outline-info mr-1 mb-1"
                 on:click={selectPerson}>{person}</button
             >
-            <!-- {@debug thisPerson} -->
         {/each}
         <p>{thisPerson}</p>
     </div>
     <Title3>
         Aujourd'hui: {today}
     </Title3>
-
-    <!-- {@debug today} -->
-    <!-- <Title3>Agents travaillant ce jour:</Title3> -->
 
     {#each jours as day}
         {#if day.jour == thisDay}
@@ -134,15 +126,7 @@
         {#each filteredDays as day}
             {#if day.jour >= thisDay}
                 <Day {day} />
-                <!-- {#each filteredDays as { jour, weekday, employees }}
-        <p>
-            {weekday}
-            {jour}:
-            {#each employees as employee}
-            {employee.join(", ")}
-            {/each}
-        </p>
-        {/each} -->
+
                 {@debug filteredDays}
             {/if}
         {/each}
@@ -159,4 +143,4 @@
     {#each jours as day}
         <Day {day} />
     {/each}
-</div>
+</div> -->

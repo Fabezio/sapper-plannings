@@ -1,7 +1,7 @@
 const litteralOptions = {
-  weekday: 'short',
+  weekday: 'long',
   day: 'numeric',
-  month: 'short',
+  month: 'long',
   year: 'numeric'
 }
 const numericOptions = {

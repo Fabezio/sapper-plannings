@@ -1,4 +1,5 @@
 import workers from './workers'
+import { litteralFormatter } from '../services/dateTimeFormatter'
 
 const planning = {
   site: 'Arcs de Seine',
@@ -20,7 +21,7 @@ const planning = {
       jours: [
         {
           jour: 1,
-          weekday: 'sam.',
+
           ferie: true,
           employees: [
             {
@@ -51,7 +52,6 @@ const planning = {
         },
         {
           jour: 2,
-          weekday: 'dim.',
           employees: [
             {
               period: '07h-19h',
@@ -81,7 +81,6 @@ const planning = {
         },
         {
           jour: 3,
-          weekday: 'lun.',
           employees: [
             {
               period: '07h-19h',
@@ -111,7 +110,6 @@ const planning = {
         },
         {
           jour: 4,
-          weekday: 'mar.',
           employees: [
             {
               period: '07h-19h',
@@ -141,7 +139,6 @@ const planning = {
         },
         {
           jour: 5,
-          weekday: 'mer.',
           employees: [
             {
               period: '07h-19h',
@@ -171,7 +168,6 @@ const planning = {
         },
         {
           jour: 6,
-          weekday: 'jeu.',
           employees: [
             {
               period: '07h-19h',
@@ -201,7 +197,6 @@ const planning = {
         },
         {
           jour: 7,
-          weekday: 'ven.',
           employees: [
             {
               period: '07h-19h',
@@ -232,7 +227,6 @@ const planning = {
         {
           jour: 8,
           ferie: true,
-          weekday: 'sam.',
           employees: [
             {
               period: '07h-19h',
@@ -262,7 +256,6 @@ const planning = {
         },
         {
           jour: 9,
-          weekday: 'dim.',
           employees: [
             {
               period: '07h-19h',
@@ -292,7 +285,6 @@ const planning = {
         },
         {
           jour: 10,
-          weekday: 'lun.',
           employees: [
             {
               period: '07h-19h',
@@ -322,7 +314,6 @@ const planning = {
         },
         {
           jour: 11,
-          weekday: 'mar.',
           employees: [
             {
               period: '07h-19h',
@@ -352,7 +343,6 @@ const planning = {
         },
         {
           jour: 12,
-          weekday: 'mer.',
           employees: [
             {
               period: '07h-19h',
@@ -383,7 +373,6 @@ const planning = {
         {
           jour: 13,
           ferie: true,
-          weekday: 'jeu.',
           employees: [
             {
               period: '07h-19h',
@@ -413,7 +402,6 @@ const planning = {
         },
         {
           jour: 14,
-          weekday: 'ven.',
           employees: [
             {
               period: '07h-19h',
@@ -443,7 +431,6 @@ const planning = {
         },
         {
           jour: 15,
-          weekday: 'sam.',
           employees: [
             {
               period: '07h-19h',
@@ -473,7 +460,6 @@ const planning = {
         },
         {
           jour: 16,
-          weekday: 'dim.',
           employees: [
             {
               period: '07h-19h',
@@ -503,7 +489,6 @@ const planning = {
         },
         {
           jour: 17,
-          weekday: 'lun.',
           employees: [
             {
               period: '07h-19h',
@@ -533,7 +518,6 @@ const planning = {
         },
         {
           jour: 18,
-          weekday: 'mar.',
           employees: [
             {
               period: '07h-19h',
@@ -563,7 +547,6 @@ const planning = {
         },
         {
           jour: 19,
-          weekday: 'mer.',
           employees: [
             {
               period: '07h-19h',
@@ -593,7 +576,6 @@ const planning = {
         },
         {
           jour: 20,
-          weekday: 'jeu.',
           employees: [
             {
               period: '07h-19h',
@@ -623,7 +605,6 @@ const planning = {
         },
         {
           jour: 21,
-          weekday: 'ven.',
           employees: [
             {
               period: '07h-19h',
@@ -653,7 +634,6 @@ const planning = {
         },
         {
           jour: 22,
-          weekday: 'sam.',
           employees: [
             {
               period: '07h-19h',
@@ -683,7 +663,6 @@ const planning = {
         },
         {
           jour: 23,
-          weekday: 'dim.',
           employees: [
             {
               period: '07h-19h',
@@ -714,7 +693,6 @@ const planning = {
         {
           jour: 24,
           ferie: true,
-          weekday: 'lun.',
           employees: [
             {
               period: '07h-19h',
@@ -744,7 +722,6 @@ const planning = {
         },
         {
           jour: 25,
-          weekday: 'mar.',
           employees: [
             {
               period: '07h-19h',
@@ -774,7 +751,6 @@ const planning = {
         },
         {
           jour: 26,
-          weekday: 'mer.',
           employees: [
             {
               period: '07h-19h',
@@ -804,7 +780,6 @@ const planning = {
         },
         {
           jour: 27,
-          weekday: 'jeu.',
           employees: [
             {
               period: '07h-19h',
@@ -834,7 +809,6 @@ const planning = {
         },
         {
           jour: 28,
-          weekday: 'ven.',
           employees: [
             {
               period: '07h-19h',
@@ -864,7 +838,6 @@ const planning = {
         },
         {
           jour: 29,
-          weekday: 'sam.',
           employees: [
             {
               period: '07h-19h',
@@ -894,7 +867,6 @@ const planning = {
         },
         {
           jour: 30,
-          weekday: 'dim.',
           employees: [
             {
               period: '07h-19h',
@@ -924,7 +896,6 @@ const planning = {
         },
         {
           jour: 31,
-          weekday: 'lun.',
           employees: [
             {
               period: '07h-19h',
@@ -959,7 +930,7 @@ const planning = {
       jours: [
         {
           jour: 1,
-          weekday: 'sam.',
+
           ferie: false,
           employees: [
             {
@@ -990,7 +961,6 @@ const planning = {
         },
         {
           jour: 2,
-          weekday: 'dim.',
           employees: [
             {
               period: '07h-19h',
@@ -1020,7 +990,6 @@ const planning = {
         },
         {
           jour: 3,
-          weekday: 'lun.',
           employees: [
             {
               period: '07h-19h',
@@ -1050,7 +1019,6 @@ const planning = {
         },
         {
           jour: 4,
-          weekday: 'mar.',
           employees: [
             {
               period: '07h-19h',
@@ -1080,7 +1048,6 @@ const planning = {
         },
         {
           jour: 5,
-          weekday: 'mer.',
           employees: [
             {
               period: '07h-19h',
@@ -1110,7 +1077,6 @@ const planning = {
         },
         {
           jour: 6,
-          weekday: 'jeu.',
           employees: [
             {
               period: '07h-19h',
@@ -1140,7 +1106,6 @@ const planning = {
         },
         {
           jour: 7,
-          weekday: 'ven.',
           employees: [
             {
               period: '07h-19h',
@@ -1171,7 +1136,6 @@ const planning = {
         {
           jour: 8,
           ferie: false,
-          weekday: 'sam.',
           employees: [
             {
               period: '07h-19h',
@@ -1201,7 +1165,6 @@ const planning = {
         },
         {
           jour: 9,
-          weekday: 'dim.',
           employees: [
             {
               period: '07h-19h',
@@ -1231,7 +1194,6 @@ const planning = {
         },
         {
           jour: 10,
-          weekday: 'lun.',
           employees: [
             {
               period: '07h-19h',
@@ -1261,7 +1223,6 @@ const planning = {
         },
         {
           jour: 11,
-          weekday: 'mar.',
           employees: [
             {
               period: '07h-19h',
@@ -1291,7 +1252,6 @@ const planning = {
         },
         {
           jour: 12,
-          weekday: 'mer.',
           employees: [
             {
               period: '07h-19h',
@@ -1322,7 +1282,6 @@ const planning = {
         {
           jour: 13,
           ferie: false,
-          weekday: 'jeu.',
           employees: [
             {
               period: '07h-19h',
@@ -1352,7 +1311,6 @@ const planning = {
         },
         {
           jour: 14,
-          weekday: 'ven.',
           employees: [
             {
               period: '07h-19h',
@@ -1382,7 +1340,6 @@ const planning = {
         },
         {
           jour: 15,
-          weekday: 'sam.',
           employees: [
             {
               period: '07h-19h',
@@ -1412,7 +1369,6 @@ const planning = {
         },
         {
           jour: 16,
-          weekday: 'dim.',
           employees: [
             {
               period: '07h-19h',
@@ -1442,7 +1398,6 @@ const planning = {
         },
         {
           jour: 17,
-          weekday: 'lun.',
           employees: [
             {
               period: '07h-19h',
@@ -1472,7 +1427,6 @@ const planning = {
         },
         {
           jour: 18,
-          weekday: 'mar.',
           employees: [
             {
               period: '07h-19h',
@@ -1502,7 +1456,6 @@ const planning = {
         },
         {
           jour: 19,
-          weekday: 'mer.',
           employees: [
             {
               period: '07h-19h',
@@ -1532,7 +1485,6 @@ const planning = {
         },
         {
           jour: 20,
-          weekday: 'jeu.',
           employees: [
             {
               period: '07h-19h',
@@ -1562,7 +1514,6 @@ const planning = {
         },
         {
           jour: 21,
-          weekday: 'ven.',
           employees: [
             {
               period: '07h-19h',
@@ -1592,7 +1543,6 @@ const planning = {
         },
         {
           jour: 22,
-          weekday: 'sam.',
           employees: [
             {
               period: '07h-19h',
@@ -1622,7 +1572,6 @@ const planning = {
         },
         {
           jour: 23,
-          weekday: 'dim.',
           employees: [
             {
               period: '07h-19h',
@@ -1653,7 +1602,6 @@ const planning = {
         {
           ferie: false,
           jour: 24,
-          weekday: 'lun.',
           employees: [
             {
               period: '07h-19h',
@@ -1683,7 +1631,6 @@ const planning = {
         },
         {
           jour: 25,
-          weekday: 'mar.',
           employees: [
             {
               period: '07h-19h',
@@ -1713,7 +1660,6 @@ const planning = {
         },
         {
           jour: 26,
-          weekday: 'mer.',
           employees: [
             {
               period: '07h-19h',
@@ -1743,7 +1689,6 @@ const planning = {
         },
         {
           jour: 27,
-          weekday: 'jeu.',
           employees: [
             {
               period: '07h-19h',
@@ -1773,7 +1718,6 @@ const planning = {
         },
         {
           jour: 28,
-          weekday: 'ven.',
           employees: [
             {
               period: '07h-19h',
@@ -1803,7 +1747,6 @@ const planning = {
         },
         {
           jour: 29,
-          weekday: 'sam.',
           employees: [
             {
               period: '07h-19h',
@@ -1833,7 +1776,6 @@ const planning = {
         },
         {
           jour: 30,
-          weekday: 'dim.',
           employees: [
             {
               period: '07h-19h',
@@ -1884,4 +1826,15 @@ const planning = {
     }
   ]
 }
+planning.mois.map(({ jours, nom }, index) => {
+  if (!jours) return null
+  // console.log(typeof jours)
+  jours.map((jour, j) => {
+    const thatDay = new Date().setFullYear(2021, index, j + 1)
+    const date = litteralFormatter.format(thatDay)
+    jour.weekday = date.split(' ')[0]
+    console.log(jour.weekday, j + 1, nom)
+  })
+})
+
 export default planning
