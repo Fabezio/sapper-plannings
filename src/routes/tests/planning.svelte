@@ -21,9 +21,9 @@
     //     });
 
     // });
-
+    const month = new Date().getMonth();
     let monthNb;
-    $: monthNb = 5;
+    $: monthNb = month + 1;
     const date = new Date();
     const today = numericFormatter.format(date);
     const thisMonth = today.split(" ")[2];
@@ -32,10 +32,10 @@
     const { mois } = planning;
     let { jours } = planning.mois[4];
     function previousMonth() {
-        return (monthNb -= 1);
+        return (month -= 1);
     }
     function nextMonth() {
-        return (monthNb += 1);
+        return (month += 1);
     }
 
     let namesList = [];
@@ -87,7 +87,10 @@
     });
 </script>
 
+<!-- <button on:click={previousMonth}>&larr;</button> -->
 <Month month={monthNb} />
+<!-- Mois de {mois.nom} -->
+<!-- <button on:click={nextMonth}>&rarr;</button> -->
 
 <!-- 
 {@debug filteredDays}
