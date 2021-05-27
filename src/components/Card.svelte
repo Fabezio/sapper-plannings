@@ -2,7 +2,7 @@
     import Vacation from "./Vacation.svelte";
     export let str = "";
     export let employees = [];
-    let color = "primary";
+    let color = "dark";
     if (str !== "07h-19h") color = "dark";
 </script>
 

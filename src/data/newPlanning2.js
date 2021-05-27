@@ -1833,8 +1833,11 @@ planning.mois.map(({ jours, nom }, index) => {
     const thatDay = new Date().setFullYear(2021, index, j + 1)
     const date = litteralFormatter.format(thatDay)
     jour.weekday = date.split(' ')[0]
-    console.log(jour.weekday, j + 1, nom)
+    // console.log(jour.weekday, j + 1, nom)
+    return jour
   })
+  return planning
 })
+// console.log(planning)
 
 export default planning

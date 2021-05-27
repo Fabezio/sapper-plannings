@@ -1,8 +1,9 @@
 <script>
     export let vacation = {};
-    const { period, service, employment, employee } = vacation;
-    export let color;
+    const { employment, employee } = vacation;
+    // $: { period, service, employment, employee } = vacation;
     const { nom, prenom } = employee;
+    export let color;
     $: if (!nom.length) {
         nom = "- - - - -";
         color = "danger";

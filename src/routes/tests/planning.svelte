@@ -32,10 +32,10 @@
     const { mois } = planning;
     let { jours } = planning.mois[4];
     function previousMonth() {
-        return (month -= 1);
+        return (monthNb -= 1);
     }
     function nextMonth() {
-        return (month += 1);
+        return (monthNb += 1);
     }
 
     let namesList = [];
@@ -88,7 +88,7 @@
 </script>
 
 <!-- <button on:click={previousMonth}>&larr;</button> -->
-<Month month={monthNb} />
+<Month month={monthNb} on:previous={previousMonth} on:next={nextMonth} />
 <!-- Mois de {mois.nom} -->
 <!-- <button on:click={nextMonth}>&rarr;</button> -->
 

@@ -4,8 +4,10 @@
     export let day;
     day.color = "default";
     day.border = "secondary";
-    let { jour, weekday, employees, ferie, color, border } = day;
-    $: if (weekday === "sam." || weekday === "dim." || ferie) {
+
+    const { jour, weekday, employees, ferie } = day;
+    let { color, border } = day;
+    $: if (weekday === "samedi" || weekday === "dimanche" || ferie) {
         color = "success";
         border = "success";
     }
@@ -18,7 +20,7 @@
         class="text-center mt-2 font-weight-bold text-dark  "
         style="min-width: 5rem;"
     >
-        {weekday}
+        {weekday.slice(0, 3)}
         {jour}
     </span>
     <Card {employees} str="07h-19h" />
