@@ -1,6 +1,6 @@
 <script>
     // import Vacation from "./Vacation.svelte";
-    import Card from "./Card.svelte";
+    import Card from "./bars/Card.svelte";
     export let day;
     day.color = "default";
     day.border = "secondary";

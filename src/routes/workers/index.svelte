@@ -1,6 +1,6 @@
 <script>
     import { mai, ADS, namesList } from "../../services/workers.js";
-    import Sheet from "../../components/Sheet.svelte";
+    import Sheet from "../../components/contents/table/Sheet.svelte";
     let worker = "";
     let displayPlanning = false;
     function generatePlanning(e) {

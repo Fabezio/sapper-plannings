@@ -1,6 +1,6 @@
 <script>
     import { litteralFormatter } from "../services/dateTimeFormatter";
-    import Bar from "./Bar.svelte";
+    import Bar from "./contents/bars/Bar.svelte";
 
     export let isToday;
     export let arr;

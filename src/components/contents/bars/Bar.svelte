@@ -1,5 +1,5 @@
 <script>
-    import Eff from "./Eff.svelte"
+    import Eff from "../../Eff.svelte"
     export let el
     const { jour, weekday, agentJour, agentNuit, chefJour, chefNuit, ferie } = el
 </script>

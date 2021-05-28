@@ -1,15 +1,16 @@
 <script>
     import { createEventDispatcher } from "svelte";
-    import planning from "../data/newPlanning2";
-    import Title3 from "./headings/Title3.svelte";
-    import Select from "./DaysSelect.svelte";
-    // import Day from "./Day.svelte";
-    import NamesList from "./NamesList.svelte";
+    import planning from "../../data/newPlanning2";
     import {
         numericFormatter,
         litteralFormatter,
-    } from "../services/dateTimeFormatter";
-    import { select_multiple_value } from "svelte/internal";
+    } from "../../services/dateTimeFormatter";
+    
+    import Title3 from "../headings/Title3.svelte";
+    import Select from "./DaysSelect.svelte";
+    // import Day from "./Day.svelte";
+    import NamesList from "./NamesList.svelte";
+    
 
     export let month;
 

@@ -1,14 +1,14 @@
 <script>
     import planning from "../../data/newPlanning2";
-    import Month from "../../components/Month.svelte";
     import {
         numericFormatter,
         litteralFormatter,
     } from "../../services/dateTimeFormatter";
-    import Day from "../../components/Day.svelte";
     import Title3 from "../../components/headings/Title3.svelte";
-    import Bar from "../../components/Bar.svelte";
-    import Card from "../../components/Card.svelte";
+    import Month from "../../components/contents/Month.svelte";
+    import Day from "../../components/contents/Day.svelte";
+    import Bar from "../../components/contents/bars/Bar.svelte";
+    import Card from "../../components/contents/bars/Card.svelte";
 
     // planning.mois.map(({ jours, nom }, index) => {
     //     if (!jours) return;

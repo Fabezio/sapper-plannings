@@ -3,7 +3,7 @@
     import {
         // numericFormatter,
         litteralFormatter,
-    } from "../services/dateTimeFormatter";
+    } from "../../services/dateTimeFormatter";
     export let thisPerson;
     export let namesList = [];
     export let planning;
