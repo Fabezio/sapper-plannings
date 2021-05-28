@@ -1,12 +1,9 @@
-<!--
-
--->
 <script context="module">
 	export function preload() {
-		return this.fetch(`v2/planning.json`)
+		return this.fetch(`timemap.json`)
 			.then((r) => r.json())
 			.then((months) => {
-				//const {mois} =planning
+				//const {mois} =timemap
 				return { months };
 			});
 	}
@@ -14,7 +11,7 @@
 
 <script>
 	export let months;
-	const title = "planning version 2";
+	const title = "Planning version 2";
 	console.log(typeof months);
 </script>
 
@@ -26,7 +23,7 @@
 {#each months as { monthName, days }}
 	{#if days}
 		<a
-			href="v2/planning/{monthName}"
+			href="v2/timemap/{monthName}"
 			rel="prefetch"
 			class="btn mr-2 btn-outline-success text-uppercase"
 			title="nombre de jours: {days.length}"
@@ -35,5 +32,3 @@
 		</a>
 	{/if}
 {/each}
-<!--
--->

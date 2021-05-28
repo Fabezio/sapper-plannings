@@ -2,20 +2,19 @@
 	import Head from "../components/containers/Head.svelte";
 	// import Nav from "../components/containers/Nav.svelte";
 	import Footer from "../components/containers/Footer.svelte";
-	
+
 	// import { url } from "inspector";
 	const links = [
-		{ url: undefined, label: "Planning Synthétique", visible: true },
-		{ url: "calendar", label: "Calendrier", visible: false },
-		{ url: "about", label: "About", visible: false },
-		{ url: "blog", label: "Blog", visible: false, prefetch: true },
-		{ url: "home", label: "Accueil", visible: false, prefetch: true },
 		{
-			url: "workers",
-			label: "Plannings Individuels",
+			url: "timemap",
+			label: "Planning",
+			prefetch: true,
 			visible: true,
-			prefetch: false,
 		},
+		// { url: "calendar", label: "Calendrier", visible: false },
+		// { url: "about", label: "About", visible: false },
+		// { url: "blog", label: "Blog", visible: false, prefetch: true },
+		{ url: "home", label: "Accueil", visible: false, prefetch: true },
 	];
 
 	export let segment;

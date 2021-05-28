@@ -1,8 +1,8 @@
-<!-- <script context="module">
+<script context="module">
 	export async function preload({ params }) {
 		// the `slug` parameter is available because
 		// this file is called [slug].svelte
-		const res = await this.fetch(`v2/planning/${params.monthName}.json`);
+		const res = await this.fetch(`timemap/${params.monthName}.json`);
 		const data = await res.json();
 
 		if (res.status === 200) {
@@ -15,18 +15,17 @@
 
 <script>
 	export let month;
-	const { monthName } = month;
+	const { monthName, days } = month;
 </script>
 
 {@debug monthName}
 
-<!-- 
 <svelte:head>
-	<title>{month.monthName}</title>
+	<title>{monthName}</title>
 </svelte:head>
 
-<h1>{month.monthName}</h1>
+<h1>{monthName}</h1>
 
 <div class="content">
-	{month.days.length}
-</div> -->
+	nombre de jours {days.length}
+</div>

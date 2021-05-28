@@ -1,4 +1,4 @@
-const workers = {
+const employees = {
   chaouti: { lastname: 'Chaouti', firstname: 'Brahim' },
   coulibaly: { lastname: 'Coulibaly', firstname: 'Oumar' },
   dossou: { lastname: 'Dossou', firstname: 'Victorin' },
@@ -24,4 +24,4 @@ const workers = {
   bayou: { lastname: 'Bayou', firstname: 'Rachid' },
   tachfine: { lastname: 'Tachfine', firstname: 'Ayoub' }
 }
-export default workers
+export default employees

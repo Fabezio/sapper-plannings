@@ -1,5 +1,5 @@
 <script>
-    import Planning from "./v2/planning/index.svelte";
+    import Timemap from "./timemap/index.svelte";
 </script>
 
-<Planning />
+<Timemap />

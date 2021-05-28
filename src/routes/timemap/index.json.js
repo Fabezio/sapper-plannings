@@ -1,7 +1,7 @@
-import planning from '../../../data/newPlanning3'
+import timemap from '../../data/timemap'
 
 const contents = JSON.stringify(
-  planning.months.map(({ monthName, days }) => {
+  timemap.months.map(({ monthName, days }) => {
     return { monthName, days }
   })
 )

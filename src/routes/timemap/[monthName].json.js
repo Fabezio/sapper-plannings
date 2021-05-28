@@ -1,14 +1,13 @@
-import planning from '../../../data/newPlanning3'
+import timemap from '../../data/timemap'
 
 const lookup = new Map()
-planning.months.forEach(month => {
+timemap.months.forEach(month => {
   lookup.set(month.monthName, JSON.stringify(month))
-  console.log(month)
 })
 
 export function get (req, res, next) {
-  // the `slug` parameter is available because
-  // this file is called [slug].json.js
+  // the `monthName` parameter is available because
+  // this file is called [monthName].json.js
   const { monthName } = req.params
 
   if (lookup.has(monthName)) {
