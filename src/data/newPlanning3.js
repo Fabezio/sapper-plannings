@@ -1,26 +1,26 @@
 import workers from './workers'
 import { litteralFormatter } from '../services/dateTimeFormatter'
 
-const planning = [{
+const planning = {
   site: 'Arcs de Seine',
-  mois: [
+  months: [
     {
-      nom: 'janvier'
+      monthName: 'janvier'
     },
     {
-      nom: 'février'
+      monthName: 'février'
     },
     {
-      nom: 'mars'
+      monthName: 'mars'
     },
     {
-      nom: 'avril'
+      monthName: 'avril'
     },
     {
-      nom: 'mai',
-      jours: [
+      monthName: 'mai',
+      days: [
         {
-          jour: 1,
+          dayName: 1,
 
           ferie: true,
           employees: [
@@ -51,7 +51,7 @@ const planning = [{
           ]
         },
         {
-          jour: 2,
+          dayName: 2,
           employees: [
             {
               period: '07h-19h',
@@ -80,7 +80,7 @@ const planning = [{
           ]
         },
         {
-          jour: 3,
+          dayName: 3,
           employees: [
             {
               period: '07h-19h',
@@ -109,7 +109,7 @@ const planning = [{
           ]
         },
         {
-          jour: 4,
+          dayName: 4,
           employees: [
             {
               period: '07h-19h',
@@ -138,7 +138,7 @@ const planning = [{
           ]
         },
         {
-          jour: 5,
+          dayName: 5,
           employees: [
             {
               period: '07h-19h',
@@ -167,7 +167,7 @@ const planning = [{
           ]
         },
         {
-          jour: 6,
+          dayName: 6,
           employees: [
             {
               period: '07h-19h',
@@ -196,7 +196,7 @@ const planning = [{
           ]
         },
         {
-          jour: 7,
+          dayName: 7,
           employees: [
             {
               period: '07h-19h',
@@ -225,7 +225,7 @@ const planning = [{
           ]
         },
         {
-          jour: 8,
+          dayName: 8,
           ferie: true,
           employees: [
             {
@@ -255,7 +255,7 @@ const planning = [{
           ]
         },
         {
-          jour: 9,
+          dayName: 9,
           employees: [
             {
               period: '07h-19h',
@@ -284,7 +284,7 @@ const planning = [{
           ]
         },
         {
-          jour: 10,
+          dayName: 10,
           employees: [
             {
               period: '07h-19h',
@@ -313,7 +313,7 @@ const planning = [{
           ]
         },
         {
-          jour: 11,
+          dayName: 11,
           employees: [
             {
               period: '07h-19h',
@@ -342,7 +342,7 @@ const planning = [{
           ]
         },
         {
-          jour: 12,
+          dayName: 12,
           employees: [
             {
               period: '07h-19h',
@@ -371,7 +371,7 @@ const planning = [{
           ]
         },
         {
-          jour: 13,
+          dayName: 13,
           ferie: true,
           employees: [
             {
@@ -401,7 +401,7 @@ const planning = [{
           ]
         },
         {
-          jour: 14,
+          dayName: 14,
           employees: [
             {
               period: '07h-19h',
@@ -430,7 +430,7 @@ const planning = [{
           ]
         },
         {
-          jour: 15,
+          dayName: 15,
           employees: [
             {
               period: '07h-19h',
@@ -459,7 +459,7 @@ const planning = [{
           ]
         },
         {
-          jour: 16,
+          dayName: 16,
           employees: [
             {
               period: '07h-19h',
@@ -488,7 +488,7 @@ const planning = [{
           ]
         },
         {
-          jour: 17,
+          dayName: 17,
           employees: [
             {
               period: '07h-19h',
@@ -517,7 +517,7 @@ const planning = [{
           ]
         },
         {
-          jour: 18,
+          dayName: 18,
           employees: [
             {
               period: '07h-19h',
@@ -546,7 +546,7 @@ const planning = [{
           ]
         },
         {
-          jour: 19,
+          dayName: 19,
           employees: [
             {
               period: '07h-19h',
@@ -575,7 +575,7 @@ const planning = [{
           ]
         },
         {
-          jour: 20,
+          dayName: 20,
           employees: [
             {
               period: '07h-19h',
@@ -604,7 +604,7 @@ const planning = [{
           ]
         },
         {
-          jour: 21,
+          dayName: 21,
           employees: [
             {
               period: '07h-19h',
@@ -633,7 +633,7 @@ const planning = [{
           ]
         },
         {
-          jour: 22,
+          dayName: 22,
           employees: [
             {
               period: '07h-19h',
@@ -662,7 +662,7 @@ const planning = [{
           ]
         },
         {
-          jour: 23,
+          dayName: 23,
           employees: [
             {
               period: '07h-19h',
@@ -691,7 +691,7 @@ const planning = [{
           ]
         },
         {
-          jour: 24,
+          dayName: 24,
           ferie: true,
           employees: [
             {
@@ -721,7 +721,7 @@ const planning = [{
           ]
         },
         {
-          jour: 25,
+          dayName: 25,
           employees: [
             {
               period: '07h-19h',
@@ -750,7 +750,7 @@ const planning = [{
           ]
         },
         {
-          jour: 26,
+          dayName: 26,
           employees: [
             {
               period: '07h-19h',
@@ -779,7 +779,7 @@ const planning = [{
           ]
         },
         {
-          jour: 27,
+          dayName: 27,
           employees: [
             {
               period: '07h-19h',
@@ -808,7 +808,7 @@ const planning = [{
           ]
         },
         {
-          jour: 28,
+          dayName: 28,
           employees: [
             {
               period: '07h-19h',
@@ -837,7 +837,7 @@ const planning = [{
           ]
         },
         {
-          jour: 29,
+          dayName: 29,
           employees: [
             {
               period: '07h-19h',
@@ -866,7 +866,7 @@ const planning = [{
           ]
         },
         {
-          jour: 30,
+          dayName: 30,
           employees: [
             {
               period: '07h-19h',
@@ -895,7 +895,7 @@ const planning = [{
           ]
         },
         {
-          jour: 31,
+          dayName: 31,
           employees: [
             {
               period: '07h-19h',
@@ -926,10 +926,10 @@ const planning = [{
       ]
     },
     {
-      nom: 'juin',
-      jours: [
+      monthName: 'juin',
+      days: [
         {
-          jour: 1,
+          dayName: 1,
 
           ferie: false,
           employees: [
@@ -960,7 +960,7 @@ const planning = [{
           ]
         },
         {
-          jour: 2,
+          dayName: 2,
           employees: [
             {
               period: '07h-19h',
@@ -989,7 +989,7 @@ const planning = [{
           ]
         },
         {
-          jour: 3,
+          dayName: 3,
           employees: [
             {
               period: '07h-19h',
@@ -1018,7 +1018,7 @@ const planning = [{
           ]
         },
         {
-          jour: 4,
+          dayName: 4,
           employees: [
             {
               period: '07h-19h',
@@ -1047,7 +1047,7 @@ const planning = [{
           ]
         },
         {
-          jour: 5,
+          dayName: 5,
           employees: [
             {
               period: '07h-19h',
@@ -1076,7 +1076,7 @@ const planning = [{
           ]
         },
         {
-          jour: 6,
+          dayName: 6,
           employees: [
             {
               period: '07h-19h',
@@ -1105,7 +1105,7 @@ const planning = [{
           ]
         },
         {
-          jour: 7,
+          dayName: 7,
           employees: [
             {
               period: '07h-19h',
@@ -1134,7 +1134,7 @@ const planning = [{
           ]
         },
         {
-          jour: 8,
+          dayName: 8,
           ferie: false,
           employees: [
             {
@@ -1164,7 +1164,7 @@ const planning = [{
           ]
         },
         {
-          jour: 9,
+          dayName: 9,
           employees: [
             {
               period: '07h-19h',
@@ -1193,7 +1193,7 @@ const planning = [{
           ]
         },
         {
-          jour: 10,
+          dayName: 10,
           employees: [
             {
               period: '07h-19h',
@@ -1222,7 +1222,7 @@ const planning = [{
           ]
         },
         {
-          jour: 11,
+          dayName: 11,
           employees: [
             {
               period: '07h-19h',
@@ -1251,7 +1251,7 @@ const planning = [{
           ]
         },
         {
-          jour: 12,
+          dayName: 12,
           employees: [
             {
               period: '07h-19h',
@@ -1280,7 +1280,7 @@ const planning = [{
           ]
         },
         {
-          jour: 13,
+          dayName: 13,
           ferie: false,
           employees: [
             {
@@ -1310,7 +1310,7 @@ const planning = [{
           ]
         },
         {
-          jour: 14,
+          dayName: 14,
           employees: [
             {
               period: '07h-19h',
@@ -1339,7 +1339,7 @@ const planning = [{
           ]
         },
         {
-          jour: 15,
+          dayName: 15,
           employees: [
             {
               period: '07h-19h',
@@ -1368,7 +1368,7 @@ const planning = [{
           ]
         },
         {
-          jour: 16,
+          dayName: 16,
           employees: [
             {
               period: '07h-19h',
@@ -1397,7 +1397,7 @@ const planning = [{
           ]
         },
         {
-          jour: 17,
+          dayName: 17,
           employees: [
             {
               period: '07h-19h',
@@ -1426,7 +1426,7 @@ const planning = [{
           ]
         },
         {
-          jour: 18,
+          dayName: 18,
           employees: [
             {
               period: '07h-19h',
@@ -1455,7 +1455,7 @@ const planning = [{
           ]
         },
         {
-          jour: 19,
+          dayName: 19,
           employees: [
             {
               period: '07h-19h',
@@ -1484,7 +1484,7 @@ const planning = [{
           ]
         },
         {
-          jour: 20,
+          dayName: 20,
           employees: [
             {
               period: '07h-19h',
@@ -1513,7 +1513,7 @@ const planning = [{
           ]
         },
         {
-          jour: 21,
+          dayName: 21,
           employees: [
             {
               period: '07h-19h',
@@ -1542,7 +1542,7 @@ const planning = [{
           ]
         },
         {
-          jour: 22,
+          dayName: 22,
           employees: [
             {
               period: '07h-19h',
@@ -1571,7 +1571,7 @@ const planning = [{
           ]
         },
         {
-          jour: 23,
+          dayName: 23,
           employees: [
             {
               period: '07h-19h',
@@ -1601,7 +1601,7 @@ const planning = [{
         },
         {
           ferie: false,
-          jour: 24,
+          dayName: 24,
           employees: [
             {
               period: '07h-19h',
@@ -1630,7 +1630,7 @@ const planning = [{
           ]
         },
         {
-          jour: 25,
+          dayName: 25,
           employees: [
             {
               period: '07h-19h',
@@ -1659,7 +1659,7 @@ const planning = [{
           ]
         },
         {
-          jour: 26,
+          dayName: 26,
           employees: [
             {
               period: '07h-19h',
@@ -1688,7 +1688,7 @@ const planning = [{
           ]
         },
         {
-          jour: 27,
+          dayName: 27,
           employees: [
             {
               period: '07h-19h',
@@ -1717,7 +1717,7 @@ const planning = [{
           ]
         },
         {
-          jour: 28,
+          dayName: 28,
           employees: [
             {
               period: '07h-19h',
@@ -1746,7 +1746,7 @@ const planning = [{
           ]
         },
         {
-          jour: 29,
+          dayName: 29,
           employees: [
             {
               period: '07h-19h',
@@ -1775,7 +1775,7 @@ const planning = [{
           ]
         },
         {
-          jour: 30,
+          dayName: 30,
           employees: [
             {
               period: '07h-19h',
@@ -1807,34 +1807,34 @@ const planning = [{
     },
 
     {
-      nom: 'juillet'
+      monthName: 'juillet'
     },
     {
-      nom: 'aout'
+      monthName: 'aout'
     },
     {
-      nom: 'septembre'
+      monthName: 'septembre'
     },
     {
-      nom: 'octobre'
+      monthName: 'octobre'
     },
     {
-      nom: 'novembre'
+      monthName: 'novembre'
     },
     {
-      nom: 'décembre'
+      monthName: 'décembre'
     }
-  ]}
-]
-planning.mois.map(({ jours, nom }, index) => {
-  if (!jours) return null
-  // console.log(typeof jours)
-  jours.map((jour, j) => {
+  ]
+}
+planning.months.map(({ days, monthName }, index) => {
+  if (!days) return null
+  // console.log(typeof days)
+  days.map((day, j) => {
     const thatDay = new Date().setFullYear(2021, index, j + 1)
     const date = litteralFormatter.format(thatDay)
-    jour.weekday = date.split(' ')[0]
-    // console.log(jour.weekday, j + 1, nom)
-    return jour
+    day.weekday = date.split(' ')[0]
+    // console.log(day.weekday, j + 1, month)
+    return day
   })
   return planning
 })
