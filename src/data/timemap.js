@@ -20,7 +20,7 @@ const timemap = {
       monthName: 'mai',
       days: [
         {
-          dayName: 1,
+          dayNb: 1,
 
           ferie: true,
           employees: [
@@ -51,7 +51,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 2,
+          dayNb: 2,
           employees: [
             {
               period: '07h-19h',
@@ -80,7 +80,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 3,
+          dayNb: 3,
           employees: [
             {
               period: '07h-19h',
@@ -109,7 +109,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 4,
+          dayNb: 4,
           employees: [
             {
               period: '07h-19h',
@@ -138,7 +138,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 5,
+          dayNb: 5,
           employees: [
             {
               period: '07h-19h',
@@ -167,7 +167,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 6,
+          dayNb: 6,
           employees: [
             {
               period: '07h-19h',
@@ -196,7 +196,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 7,
+          dayNb: 7,
           employees: [
             {
               period: '07h-19h',
@@ -225,7 +225,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 8,
+          dayNb: 8,
           ferie: true,
           employees: [
             {
@@ -255,7 +255,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 9,
+          dayNb: 9,
           employees: [
             {
               period: '07h-19h',
@@ -284,7 +284,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 10,
+          dayNb: 10,
           employees: [
             {
               period: '07h-19h',
@@ -313,7 +313,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 11,
+          dayNb: 11,
           employees: [
             {
               period: '07h-19h',
@@ -342,7 +342,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 12,
+          dayNb: 12,
           employees: [
             {
               period: '07h-19h',
@@ -371,7 +371,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 13,
+          dayNb: 13,
           ferie: true,
           employees: [
             {
@@ -401,7 +401,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 14,
+          dayNb: 14,
           employees: [
             {
               period: '07h-19h',
@@ -430,7 +430,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 15,
+          dayNb: 15,
           employees: [
             {
               period: '07h-19h',
@@ -459,7 +459,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 16,
+          dayNb: 16,
           employees: [
             {
               period: '07h-19h',
@@ -488,7 +488,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 17,
+          dayNb: 17,
           employees: [
             {
               period: '07h-19h',
@@ -517,7 +517,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 18,
+          dayNb: 18,
           employees: [
             {
               period: '07h-19h',
@@ -546,7 +546,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 19,
+          dayNb: 19,
           employees: [
             {
               period: '07h-19h',
@@ -575,7 +575,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 20,
+          dayNb: 20,
           employees: [
             {
               period: '07h-19h',
@@ -604,7 +604,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 21,
+          dayNb: 21,
           employees: [
             {
               period: '07h-19h',
@@ -633,7 +633,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 22,
+          dayNb: 22,
           employees: [
             {
               period: '07h-19h',
@@ -662,7 +662,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 23,
+          dayNb: 23,
           employees: [
             {
               period: '07h-19h',
@@ -691,7 +691,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 24,
+          dayNb: 24,
           ferie: true,
           employees: [
             {
@@ -704,7 +704,8 @@ const timemap = {
               period: '07h-19h',
               service: 'sécurité',
               employment: 'SSIAP 1',
-              employee: employees.disci
+              employee: employees.frahi,
+              status: 'remplacement'
             },
             {
               period: '19h-07h',
@@ -721,7 +722,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 25,
+          dayNb: 25,
           employees: [
             {
               period: '07h-19h',
@@ -732,8 +733,8 @@ const timemap = {
             {
               period: '07h-19h',
               service: 'sécurité',
-              employment: 'SSIAP 1',
-              employee: employees.disci
+              employee: employees.frahi,
+              status: 'remplacement'
             },
             {
               period: '19h-07h',
@@ -750,7 +751,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 26,
+          dayNb: 26,
           employees: [
             {
               period: '07h-19h',
@@ -761,8 +762,8 @@ const timemap = {
             {
               period: '07h-19h',
               service: 'sécurité',
-              employment: 'SSIAP 1',
-              employee: employees.disci
+              employee: employees.frahi,
+              status: 'remplacement'
             },
             {
               period: '19h-07h',
@@ -779,36 +780,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 27,
-          employees: [
-            {
-              period: '07h-19h',
-              service: 'sécurité',
-              employment: 'SSIAP 2',
-              employee: employees.lhomme
-            },
-            {
-              period: '07h-19h',
-              service: 'sécurité',
-              employment: 'SSIAP 1',
-              employee: employees.ketir
-            },
-            {
-              period: '19h-07h',
-              service: 'sécurité',
-              employment: 'SSIAP 2',
-              employee: employees.kalle
-            },
-            {
-              period: '19h-07h',
-              service: 'sécurité',
-              employment: 'SSIAP 1',
-              employee: employees.jean
-            }
-          ]
-        },
-        {
-          dayName: 28,
+          dayNb: 27,
           employees: [
             {
               period: '07h-19h',
@@ -837,7 +809,36 @@ const timemap = {
           ]
         },
         {
-          dayName: 29,
+          dayNb: 28,
+          employees: [
+            {
+              period: '07h-19h',
+              service: 'sécurité',
+              employment: 'SSIAP 2',
+              employee: employees.lhomme
+            },
+            {
+              period: '07h-19h',
+              service: 'sécurité',
+              employment: 'SSIAP 1',
+              employee: employees.ketir
+            },
+            {
+              period: '19h-07h',
+              service: 'sécurité',
+              employment: 'SSIAP 2',
+              employee: employees.kalle
+            },
+            {
+              period: '19h-07h',
+              service: 'sécurité',
+              employment: 'SSIAP 1',
+              employee: employees.jean
+            }
+          ]
+        },
+        {
+          dayNb: 29,
           employees: [
             {
               period: '07h-19h',
@@ -866,7 +867,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 30,
+          dayNb: 30,
           employees: [
             {
               period: '07h-19h',
@@ -895,7 +896,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 31,
+          dayNb: 31,
           employees: [
             {
               period: '07h-19h',
@@ -929,7 +930,7 @@ const timemap = {
       monthName: 'juin',
       days: [
         {
-          dayName: 1,
+          dayNb: 1,
 
           ferie: false,
           employees: [
@@ -960,7 +961,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 2,
+          dayNb: 2,
           employees: [
             {
               period: '07h-19h',
@@ -989,7 +990,38 @@ const timemap = {
           ]
         },
         {
-          dayName: 3,
+          dayNb: 3,
+          employees: [
+            {
+              period: '07h-19h',
+              service: 'sécurité',
+              employment: 'SSIAP 2',
+              employee: employees.chaouti
+            },
+            {
+              period: '07h-19h',
+              service: 'sécurité',
+              employment: 'SSIAP 1',
+              employee: employees.boussetta
+            },
+            {
+              period: '19h-07h',
+              service: 'sécurité',
+              employment: 'SSIAP 2',
+              employee: employees.riquet
+            },
+            {
+              period: '19h-07h',
+              service: 'sécurité',
+              employment: 'SSIAP 1',
+              status: 'permutation demandée',
+
+              employee: employees.koite
+            }
+          ]
+        },
+        {
+          dayNb: 4,
           employees: [
             {
               period: '07h-19h',
@@ -1018,36 +1050,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 4,
-          employees: [
-            {
-              period: '07h-19h',
-              service: 'sécurité',
-              employment: 'SSIAP 2',
-              employee: employees.chaouti
-            },
-            {
-              period: '07h-19h',
-              service: 'sécurité',
-              employment: 'SSIAP 1',
-              employee: employees.boussetta
-            },
-            {
-              period: '19h-07h',
-              service: 'sécurité',
-              employment: 'SSIAP 2',
-              employee: employees.riquet
-            },
-            {
-              period: '19h-07h',
-              service: 'sécurité',
-              employment: 'SSIAP 1',
-              employee: employees.koite
-            }
-          ]
-        },
-        {
-          dayName: 5,
+          dayNb: 5,
           employees: [
             {
               period: '07h-19h',
@@ -1071,12 +1074,15 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 1',
+              status: 'permutation demandée',
+              // hasChanged: false,
+              // toChange: true,
               employee: employees.jean
             }
           ]
         },
         {
-          dayName: 6,
+          dayNb: 6,
           employees: [
             {
               period: '07h-19h',
@@ -1105,7 +1111,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 7,
+          dayNb: 7,
           employees: [
             {
               period: '07h-19h',
@@ -1134,7 +1140,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 8,
+          dayNb: 8,
           ferie: false,
           employees: [
             {
@@ -1164,7 +1170,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 9,
+          dayNb: 9,
           employees: [
             {
               period: '07h-19h',
@@ -1193,7 +1199,37 @@ const timemap = {
           ]
         },
         {
-          dayName: 10,
+          dayNb: 10,
+          employees: [
+            {
+              period: '07h-19h',
+              service: 'sécurité',
+              employment: 'SSIAP 2',
+              employee: employees.bonnet
+            },
+            {
+              period: '07h-19h',
+              service: 'sécurité',
+              employment: 'SSIAP 1',
+              employee: employees.frahi
+            },
+            {
+              period: '19h-07h',
+              service: 'sécurité',
+              employment: 'SSIAP 2',
+              employee: employees.dossou,
+              status: 'permutation demandée'
+            },
+            {
+              period: '19h-07h',
+              service: 'sécurité',
+              employment: 'SSIAP 1',
+              employee: employees.jean
+            }
+          ]
+        },
+        {
+          dayNb: 11,
           employees: [
             {
               period: '07h-19h',
@@ -1222,36 +1258,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 11,
-          employees: [
-            {
-              period: '07h-19h',
-              service: 'sécurité',
-              employment: 'SSIAP 2',
-              employee: employees.bonnet
-            },
-            {
-              period: '07h-19h',
-              service: 'sécurité',
-              employment: 'SSIAP 1',
-              employee: employees.frahi
-            },
-            {
-              period: '19h-07h',
-              service: 'sécurité',
-              employment: 'SSIAP 2',
-              employee: employees.dossou
-            },
-            {
-              period: '19h-07h',
-              service: 'sécurité',
-              employment: 'SSIAP 1',
-              employee: employees.jean
-            }
-          ]
-        },
-        {
-          dayName: 12,
+          dayNb: 12,
           employees: [
             {
               period: '07h-19h',
@@ -1280,7 +1287,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 13,
+          dayNb: 13,
           ferie: false,
           employees: [
             {
@@ -1310,7 +1317,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 14,
+          dayNb: 14,
           employees: [
             {
               period: '07h-19h',
@@ -1339,7 +1346,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 15,
+          dayNb: 15,
           employees: [
             {
               period: '07h-19h',
@@ -1368,7 +1375,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 16,
+          dayNb: 16,
           employees: [
             {
               period: '07h-19h',
@@ -1397,7 +1404,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 17,
+          dayNb: 17,
           employees: [
             {
               period: '07h-19h',
@@ -1426,7 +1433,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 18,
+          dayNb: 18,
           employees: [
             {
               period: '07h-19h',
@@ -1455,7 +1462,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 19,
+          dayNb: 19,
           employees: [
             {
               period: '07h-19h',
@@ -1484,7 +1491,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 20,
+          dayNb: 20,
           employees: [
             {
               period: '07h-19h',
@@ -1513,7 +1520,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 21,
+          dayNb: 21,
           employees: [
             {
               period: '07h-19h',
@@ -1542,7 +1549,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 22,
+          dayNb: 22,
           employees: [
             {
               period: '07h-19h',
@@ -1571,7 +1578,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 23,
+          dayNb: 23,
           employees: [
             {
               period: '07h-19h',
@@ -1589,7 +1596,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.dossou
+              employee: employees.dossou,
+              status: 'permutation demandée'
             },
             {
               period: '19h-07h',
@@ -1601,7 +1609,7 @@ const timemap = {
         },
         {
           ferie: false,
-          dayName: 24,
+          dayNb: 24,
           employees: [
             {
               period: '07h-19h',
@@ -1630,7 +1638,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 25,
+          dayNb: 25,
           employees: [
             {
               period: '07h-19h',
@@ -1648,7 +1656,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.dossou
+              employee: employees.dossou,
+              status: 'permutation demandée'
             },
             {
               period: '19h-07h',
@@ -1659,7 +1668,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 26,
+          dayNb: 26,
           employees: [
             {
               period: '07h-19h',
@@ -1688,7 +1697,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 27,
+          dayNb: 27,
           employees: [
             {
               period: '07h-19h',
@@ -1717,7 +1726,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 28,
+          dayNb: 28,
           employees: [
             {
               period: '07h-19h',
@@ -1735,7 +1744,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.dossou
+              employee: employees.dossou,
+              status: 'permutation demandée'
             },
             {
               period: '19h-07h',
@@ -1746,7 +1756,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 29,
+          dayNb: 29,
           employees: [
             {
               period: '07h-19h',
@@ -1764,7 +1774,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.dossou
+              employee: employees.dossou,
+              status: 'permutation demandée'
             },
             {
               period: '19h-07h',
@@ -1775,7 +1786,7 @@ const timemap = {
           ]
         },
         {
-          dayName: 30,
+          dayNb: 30,
           employees: [
             {
               period: '07h-19h',

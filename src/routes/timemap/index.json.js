@@ -5,7 +5,7 @@ const contents = JSON.stringify(
     return { monthName, days }
   })
 )
-console.log(contents)
+// console.log(contents)
 
 export function get (req, res) {
   res.writeHead(200, {

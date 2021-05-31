@@ -1,13 +1,13 @@
 <script>
-    import { createEventDispatcher } from "svelte";
+    // import { createEventDispatcher } from "svelte";
     import {
         // numericFormatter,
         litteralFormatter,
     } from "../../services/dateTimeFormatter";
     export let thisPerson;
-    export let namesList = [];
-    export let planning;
-    export let month;
+    export let namesList;
+    // export let timemap;
+    export let monthName;
     const date = new Date();
     const today = litteralFormatter.format(date);
     const thisDay = today.split(" ")[1];
@@ -25,20 +25,21 @@
             filteredDays = [];
         }
         thisPerson = e.target.innerText;
-        planning.mois[month - 1].jours.map((day) => {
-            const { employees, jour, weekday } = day;
-            if (jour >= thisDay) {
+        monthName.days.map((day) => {
+            const { employees, dayNb, weekday } = day;
+            if (dayNb >= thisDay) {
                 employees.map(({ employee }) => {
-                    const { nom, prenom } = employee;
+                    const { lastname, firstname } = employee;
+                    const LASTNAME = lastname.toUpperCase();
 
                     if (
                         thisPerson.length > 0 &&
-                        thisPerson == employee.nom.toUpperCase()
+                        thisPerson == employee.LASTNAME
                     ) {
                         filteredDays = [...filteredDays, day];
                     }
-                    if (!namesList.includes(nom.toUpperCase())) {
-                        namesList = [...namesList, nom.toUpperCase()];
+                    if (!namesList.includes(LASTNAME)) {
+                        namesList = [...namesList, LASTNAME];
                     }
                 });
             }
@@ -49,10 +50,11 @@
 </script>
 
 <div class="d-flex flex-wrap justify-content-start my-3">
+    <!-- {@debug namesList} -->
     {#each namesList as person}
-        {@debug person}
+        <!-- {@debug person} -->
         <button
-            class="btn btn-sm btn-outline-info mr-1 mb-1"
+            class="btn btn-sm btn-outline-primary me-1 mb-1"
             on:click={selectPerson}>{person}</button
         >
     {/each}

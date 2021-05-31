@@ -1,26 +1,26 @@
 <script>
 	import Head from "../components/containers/Head.svelte";
-	// import Nav from "../components/containers/Nav.svelte";
+	import Nav from "../components/containers/Nav.svelte";
 	import Footer from "../components/containers/Footer.svelte";
 
 	// import { url } from "inspector";
 	const links = [
+		// { url: "calendar", label: "Calendrier", visible: false },
+		// { url: "about", label: "About", visible: false },
+		// { url: "blog", label: "Blog", visible: false, prefetch: true },
+		{ url: undefined, label: "Accueil", visible: true, prefetch: false },
 		{
 			url: "timemap",
 			label: "Planning",
 			prefetch: true,
 			visible: true,
 		},
-		// { url: "calendar", label: "Calendrier", visible: false },
-		// { url: "about", label: "About", visible: false },
-		// { url: "blog", label: "Blog", visible: false, prefetch: true },
-		{ url: "home", label: "Accueil", visible: false, prefetch: true },
 	];
 
 	export let segment;
 </script>
 
-<!-- <Nav {segment} {links} /> -->
+<Nav {segment} {links} />
 {#each links as { url, label }}
 	{#if url === segment}
 		<Head title={label || "ajoute un titre"} />
@@ -29,7 +29,7 @@
 <!-- <svelte:component  /> -->
 
 <main>
-	<slot />
+	<slot {segment} />
 </main>
 
 <Footer />
