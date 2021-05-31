@@ -38,6 +38,11 @@
             bg = "warning";
             logo = "fas fa-running";
             isVisible = true;
+        } else if (status === "en cours") {
+            text = "en cours";
+            bg = "info";
+            logo = "fas fa-sync";
+            isVisible = true;
         }
     }
 

@@ -1014,7 +1014,7 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 1',
-              status: 'permutation demandée',
+              status: 'en cours',
 
               employee: employees.koite
             }
@@ -1074,7 +1074,7 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 1',
-              status: 'permutation demandée',
+              status: 'en cours',
               // hasChanged: false,
               // toChange: true,
               employee: employees.jean
@@ -1217,8 +1217,7 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.dossou,
-              status: 'permutation demandée'
+              employee: employees.dossou
             },
             {
               period: '19h-07h',
@@ -1306,7 +1305,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.riquet
+              employee: employees.riquet,
+              status: 'en cours'
             },
             {
               period: '19h-07h',
@@ -1567,7 +1567,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.riquet
+              employee: employees.riquet,
+              status: 'en cours'
             },
             {
               period: '19h-07h',
@@ -1597,7 +1598,7 @@ const timemap = {
               service: 'sécurité',
               employment: 'SSIAP 2',
               employee: employees.dossou,
-              status: 'permutation demandée'
+              status: 'en cours'
             },
             {
               period: '19h-07h',
@@ -1657,7 +1658,7 @@ const timemap = {
               service: 'sécurité',
               employment: 'SSIAP 2',
               employee: employees.dossou,
-              status: 'permutation demandée'
+              status: 'en cours'
             },
             {
               period: '19h-07h',
@@ -1686,7 +1687,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.riquet
+              employee: employees.riquet,
+              status: 'en cours'
             },
             {
               period: '19h-07h',
@@ -1715,7 +1717,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.riquet
+              employee: employees.riquet,
+              status: 'en cours'
             },
             {
               period: '19h-07h',
@@ -1744,8 +1747,7 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.dossou,
-              status: 'permutation demandée'
+              employee: employees.dossou
             },
             {
               period: '19h-07h',
@@ -1775,7 +1777,7 @@ const timemap = {
               service: 'sécurité',
               employment: 'SSIAP 2',
               employee: employees.dossou,
-              status: 'permutation demandée'
+              status: 'en cours'
             },
             {
               period: '19h-07h',
@@ -1804,7 +1806,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.dossou
+              employee: employees.dossou,
+              status: 'en cours'
             },
             {
               period: '19h-07h',

@@ -17,13 +17,14 @@
 	console.log(typeof months);
 </script>
 
+{@debug segment}
 <h2 class="text-uppercase mb-3">
 	{title}
 </h2>
 <!-- <MonthsNav {months} /> -->
 
 <!-- {@debug segment} -->
-
+<!-- 
 {#each months as { monthName, days }}
 	{#if days}
 		<a
@@ -35,4 +36,4 @@
 			{monthName}
 		</a>
 	{/if}
-{/each}
+{/each} -->

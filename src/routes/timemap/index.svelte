@@ -33,6 +33,7 @@
 <div class="container text-center">
     <div class="btn-group mb-4">
         {#each months as { monthName, days }}
+            {@debug monthName}
             {#if days}
                 <a
                     href="timemap/{monthName}"
