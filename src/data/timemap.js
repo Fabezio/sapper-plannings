@@ -985,7 +985,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 1',
-              employee: employees.koite
+              employee: employees.jean,
+              status: 'permutation accordée',
             }
           ]
         },
@@ -1014,9 +1015,9 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 1',
-              status: 'en cours',
+              
 
-              employee: employees.koite
+              employee: employees.jean
             }
           ]
         },
@@ -1074,10 +1075,10 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 1',
-              status: 'en cours',
+              status: 'permutation accordée',
               // hasChanged: false,
               // toChange: true,
-              employee: employees.jean
+              employee: employees.koite
             }
           ]
         },
@@ -1305,8 +1306,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.riquet,
-              status: 'en cours'
+              employee: employees.dossou,
+              status: 'permutation accordée'
             },
             {
               period: '19h-07h',
@@ -1567,8 +1568,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.riquet,
-              status: 'en cours'
+              employee: employees.dossou,
+              status: 'permutation accordée'
             },
             {
               period: '19h-07h',
@@ -1597,8 +1598,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.dossou,
-              status: 'en cours'
+                employee: employees.riquet,
+                status: 'permutation accordée'
             },
             {
               period: '19h-07h',
@@ -1657,8 +1658,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.dossou,
-              status: 'en cours'
+              employee: employees.riquet,
+              status: 'permutation accordée'
             },
             {
               period: '19h-07h',
@@ -1687,8 +1688,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.riquet,
-              status: 'en cours'
+              employee: employees.dossou,
+              status: 'permutation accordée'
             },
             {
               period: '19h-07h',
@@ -1717,8 +1718,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.riquet,
-              status: 'en cours'
+              employee: employees.dossou,
+              status: 'permutation accordée'
             },
             {
               period: '19h-07h',
@@ -1776,8 +1777,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.dossou,
-              status: 'en cours'
+              employee: employees.riquet,
+              status: 'permutation accordée'
             },
             {
               period: '19h-07h',
@@ -1806,8 +1807,8 @@ const timemap = {
               period: '19h-07h',
               service: 'sécurité',
               employment: 'SSIAP 2',
-              employee: employees.dossou,
-              status: 'en cours'
+              employee: employees.riquet,
+              status: 'permutation accordée'
             },
             {
               period: '19h-07h',

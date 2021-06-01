@@ -1,6 +1,7 @@
 <script>
 	import Head from "../components/containers/Head.svelte";
 	import Nav from "../components/containers/Nav.svelte";
+	import Contact from "../components/containers/ContactLine.svelte";
 	import Footer from "../components/containers/Footer.svelte";
 
 	// import { url } from "inspector";
@@ -11,7 +12,7 @@
 		{ url: undefined, label: "Accueil", visible: true, prefetch: false },
 		{
 			url: "timemap",
-			label: "Planning",
+			label: "Planning Général",
 			prefetch: true,
 			visible: true,
 		},
@@ -21,6 +22,7 @@
 </script>
 
 <Nav {segment} {links} />
+<Contact />
 {#each links as { url, label }}
 	{#if url === segment}
 		<Head title={label || "ajoute un titre"} />

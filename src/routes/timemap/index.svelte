@@ -13,6 +13,7 @@
     import { litteralFormatter } from "../../services/dateTimeFormatter";
     import MonthName from "./[monthName].svelte";
     import Day from "../../components/contents/Day.svelte";
+    import Title3 from "../../components/headings/Title3.svelte";
     export let months;
     const date = new Date();
     const today = litteralFormatter.format(date);
@@ -22,15 +23,16 @@
     console.log(typeof months);
 </script>
 
-<h2 class="text-uppercase mb-3">
+<!-- <h2 class="text-uppercase mb-3">
     {title}
-</h2>
-<p>Aujourd'hui: {today}</p>
+</h2> -->
+<!-- svelte-ignore missing-declaration -->
+<Title3 align={"center"} >Aujourd'hui: {today}</Title3>
 {@debug mois}
 <!-- <MonthsNav {months} /> -->
 
 <!-- {@debug segment} -->
-<div class="container text-center">
+<!-- <div class="container text-center">
     <div class="btn-group mb-4">
         {#each months as { monthName, days }}
             {@debug monthName}
@@ -47,7 +49,7 @@
             {/if}
         {/each}
     </div>
-</div>
+</div> -->
 <br />
 {#each months as { monthName, days }}
     {#if mois === monthName}
