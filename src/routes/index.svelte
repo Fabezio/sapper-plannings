@@ -10,7 +10,7 @@
 </script>
 
 <script>
-	import MonthsNav from "../components/containers/MonthsNav.svelte";
+	// import MonthsNav from "../components/containers/MonthsNav.svelte";
 	export let months;
 	export let segment;
 	const title = "Planning version 2";

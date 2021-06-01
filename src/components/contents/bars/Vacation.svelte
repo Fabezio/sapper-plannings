@@ -6,7 +6,7 @@
     // $: { period, service, employment, employee } = vacation;
     const { lastname, firstname } = employee;
     export let textColor;
-    export let color;
+    // export let color;    
     $: if (!lastname.length) {
         nom = "- - - - -";
         textColor = "danger";
