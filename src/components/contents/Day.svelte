@@ -14,7 +14,7 @@
 </script>
 
 <div
-    class="w-75 row justify-content-md-between card-deck mx-auto rounded-3 border-2 border-{border} p-1 alert alert-{color} shadow-sm "
+    class="row justify-content-center card-deck mx-auto rounded-3 border-2 border-{border} p-1 alert alert-{color} shadow-sm "
 >
     <span
         class="col-2 text-center mt-2 font-weight-bold text-dark  "

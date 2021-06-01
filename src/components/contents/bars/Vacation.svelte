@@ -67,9 +67,12 @@
     <!-- <span class="change-logo bg-{bg}  rounded-circle badge-lg ">
         <span class=" fs-5" title={text}>{logo}</span>
     </span> -->
-    {lastname}{firstname &&
+    {lastname}<span class="firstname">
+    {firstname &&
         `, ${firstname}
         `}
+
+    </span>
 </div>
 
 <style>
@@ -94,5 +97,17 @@
     .change-logo:hover {
         cursor: pointer;
         opacity: 1;
+    }
+    
+    .firstname {
+        display: inline;
+        margin: 0;
+        padding: 0;
+    }
+    @media screen and (max-width: 768px) {
+    .firstname {
+        display: none;
+    }
+
     }
 </style>
