@@ -16,7 +16,5 @@
     {/each}
 </span>
 <style>
-    div {
-        display: inline-block;
-    }
+    
 </style>
