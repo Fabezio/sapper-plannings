@@ -15,6 +15,7 @@
     }
     let text = "RAS";
     let bg = "success";
+    
     let logo = "";
     let isVisible = false;
     $: {
@@ -25,7 +26,7 @@
             isVisible = true;
         } else if (status === "permutation accordée") {
             text = "Permutation accordée";
-            bg = "info";
+            bg = "success";
             logo = "fas fa-check";
             isVisible = true;
         } else if (status === "permutation refusée") {
@@ -57,7 +58,7 @@
         {employment}
     -->
     <span
-        on:click={() => alert(`${firstname} a une requete`)}
+        
         title={text}
         class="fa-stack {!isVisible ? 'opacity-15' : 'logo-opacity'} "
     >

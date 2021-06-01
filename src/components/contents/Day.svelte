@@ -14,20 +14,31 @@
 </script>
 
 <div
-    class="d-flex flex-row justify-content-center card-deck mx-auto rounded-3 border-2 border-{border} p-1 alert alert-{color} shadow-sm "
+    class="day d-flex flex-row justify-content-center card-deck mx-auto rounded-3 border-2 border-{border} p-1 alert alert-{color} shadow-sm "
 >
     <span
-        class="col-2 text-center mt-2 font-weight-bold text-dark  "
+        class=" text-center mt-2 font-weight-bold text-dark  "
         style="min-width: 5rem;"
     >
         {weekday.slice(0, 3)}.
         {dayNb}
     </span>
-    <span class="d-flex">
-        <Card {employees} {color} str="07h-19h" />
-        <Card {employees} {color} str="19h-07h" />
+    <span>
 
+        <span class="d-flex flex-row">
+            <Card {employees} {color} str="07h-19h" />
+            
+            <Card {employees} {color} str="19h-07h" />
+            
+        </span>
     </span>
-
+    
+    
 </div>
+<style>
+    .day {
+        max-width: 1200px;
+    }
+
+</style>
 

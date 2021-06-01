@@ -7,11 +7,16 @@
     if (str !== "07h-19h") textColor = "dark";
 </script>
 
-<div class="text-capitalize p-2 col-5" style="min-width: 10rem;">
+<span class="text-capitalize p-2 employee-card" style="min-width: 12rem;">
     <!-- <div class="text-{textColor}">{str}</div> -->
     {#each employees as vacation, i}
         {#if vacation.period === str}
             <Vacation {textColor} {color} {vacation} />
         {/if}
     {/each}
-</div>
+</span>
+<style>
+    div {
+        display: inline-block;
+    }
+</style>
