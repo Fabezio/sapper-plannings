@@ -14,7 +14,7 @@
 </script>
 
 <div
-    class="row justify-content-center card-deck mx-auto rounded-3 border-2 border-{border} p-1 alert alert-{color} shadow-sm "
+    class="d-flex flex-row justify-content-center card-deck mx-auto rounded-3 border-2 border-{border} p-1 alert alert-{color} shadow-sm "
 >
     <span
         class="col-2 text-center mt-2 font-weight-bold text-dark  "
@@ -23,6 +23,11 @@
         {weekday.slice(0, 3)}.
         {dayNb}
     </span>
-    <Card {employees} {color} str="07h-19h" />
-    <Card {employees} {color} str="19h-07h" />
+    <span class="d-flex">
+        <Card {employees} {color} str="07h-19h" />
+        <Card {employees} {color} str="19h-07h" />
+
+    </span>
+
 </div>
+
