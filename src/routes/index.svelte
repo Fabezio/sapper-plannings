@@ -53,7 +53,7 @@
         {/each}
     </div>
 </div> -->
-<NamesList {thisPerson} monthName={months[5]} {namesList} />
+<!-- <NamesList {thisPerson} monthName={months[5]} {namesList} /> -->
 <!-- <NamesList on:select={selectPerson} monthName={months[5]} {namesList} /> -->
 
 <p>agent sélectionné: {thisPerson.length > 0 ? thisPerson : "en attente"}</p>
