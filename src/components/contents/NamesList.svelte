@@ -1,5 +1,5 @@
 <script>
-    // import { createEventDispatcher } from "svelte";
+    import { createEventDispatcher } from "svelte";
     import {
         // numericFormatter,
         litteralFormatter,
@@ -11,46 +11,73 @@
     const date = new Date();
     const today = litteralFormatter.format(date);
     const thisDay = today.split(" ")[1];
-    namesList.sort();
+
+    const dispatch = createEventDispatcher();
     // let thisPerson = "";
-    let filteredDays = [];
-    // const dispatch = createEventDispatcher();
+
+    // let filteredDays = [];
+    monthName.days.map((day) => {
+        const { employees, dayNb, weekday } = day;
+        if (dayNb >= thisDay) {
+            employees.map(({ employee }) => {
+                const { lastname, firstname } = employee;
+                const LASTNAME = lastname.toUpperCase();
+
+                // if (thisPerson.length > 0 && thisPerson == employee.LASTNAME) {
+                //     filteredDays = [...filteredDays, day];
+                // }
+                if (!namesList.includes(LASTNAME)) {
+                    namesList = [...namesList, LASTNAME];
+                }
+            });
+        }
+    });
+
+    namesList.sort();
     function selectPerson(e) {
-        console.log(e.target);
+        console.log(e.target.innerHTML);
+        return (thisPerson = e.target.innerHTML);
+    }
+    // const dispatch = createEventDispatcher();
+    // function selectPerson(e) {
+    //     console.log(e.target);
 
-        if (thisPerson.length > 0) {
-            thisPerson = "";
-        }
-        if (filteredDays.length > 0) {
-            filteredDays = [];
-        }
-        thisPerson = e.target.innerText;
-        monthName.days.map((day) => {
-            const { employees, dayNb, weekday } = day;
-            if (dayNb >= thisDay) {
-                employees.map(({ employee }) => {
-                    const { lastname, firstname } = employee;
-                    const LASTNAME = lastname.toUpperCase();
+    //     if (thisPerson.length > 0) {
+    //         thisPerson = "";
+    //     }
+    //     if (filteredDays.length > 0) {
+    //         filteredDays = [];
+    //     }
+    //     thisPerson = e.target.innerText;
+    //     monthName.days.map((day) => {
+    //         const { employees, dayNb, weekday } = day;
+    //         if (dayNb >= thisDay) {
+    //             employees.map(({ employee }) => {
+    //                 const { lastname, firstname } = employee;
+    //                 const LASTNAME = lastname.toUpperCase();
 
-                    if (
-                        thisPerson.length > 0 &&
-                        thisPerson == employee.LASTNAME
-                    ) {
-                        filteredDays = [...filteredDays, day];
-                    }
-                    if (!namesList.includes(LASTNAME)) {
-                        namesList = [...namesList, LASTNAME];
-                    }
-                });
-            }
-        });
+    //                 if (
+    //                     thisPerson.length > 0 &&
+    //                     thisPerson == employee.LASTNAME
+    //                 ) {
+    //                     filteredDays = [...filteredDays, day];
+    //                 }
+    //                 if (!namesList.includes(LASTNAME)) {
+    //                     namesList = [...namesList, LASTNAME];
+    //                 }
+    //             });
+    //         }
+    //     });
 
-        return thisPerson, filteredDays;
+    //     return thisPerson, filteredDays;
+    // }
+    $: if (thisPerson.length > 0) {
+        thisPerson = thisPerson;
     }
 </script>
 
 <div class="d-flex flex-wrap justify-content-start my-3">
-    <!-- {@debug namesList} -->
+    <!-- {@debug monthName} -->
     {#each namesList as person}
         <!-- {@debug person} -->
         <button

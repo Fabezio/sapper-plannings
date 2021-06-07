@@ -1,18 +1,27 @@
 <script>
+    // import { parse } from "path/posix";
+
     // import Vacation from "./Vacation.svelte";
     import Card from "./bars/Card.svelte";
     export let day;
+
+    export let i;
     day.color = "default";
     day.border = "secondary";
 
-    const { dayNb, weekday, employees, ferie } = day;
-    let { color, border } = day;
+    const { weekday, employees, ferie } = day;
+    let { dayNb, color, border } = day;
     $: if (weekday === "samedi" || weekday === "dimanche" || ferie) {
         color = "success";
         border = "success";
     }
+    // $: dayNb = parseInt(dayNb);
+    // dateNb = parseInt(dateNb);
+    console.log(typeof i);
+    // console.log(typeof dateNb);
 </script>
 
+<!-- {#if i + 1 >= dateNb} -->
 <div
     class="day d-flex flex-row justify-content-center card-deck mx-auto rounded-3 border-2 border-{border} p-1 alert alert-{color} shadow-sm "
 >
@@ -24,21 +33,17 @@
         {dayNb}
     </span>
     <span>
-
         <span class="d-flex flex-row">
             <Card {employees} {color} str="07h-19h" />
-            
+
             <Card {employees} {color} str="19h-07h" />
-            
         </span>
     </span>
-    
-    
 </div>
+
+<!-- {/if} -->
 <style>
     .day {
         max-width: 1200px;
     }
-
 </style>
-

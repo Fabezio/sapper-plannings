@@ -21,7 +21,7 @@
 	export let segment;
 </script>
 
-<Nav {segment} {links} />
+<!-- <Nav {segment} {links} /> -->
 <Contact />
 {#each links as { url, label }}
 	{#if url === segment}
