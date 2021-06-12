@@ -98,10 +98,16 @@
 			on:click={selectPerson}>{person}</button
 		>
 	{/each}
-	<p>{thisPerson}</p>
 </div>
 <br />
+
 <!-- planning -->
+<Title3 align="center"
+	>{thisPerson.length > 0
+		? `Planning de ${thisPerson}`
+		: "Planning général"}</Title3
+>
+<br />
 {#if thisPerson.length > 0}
 	{#each months as { monthName, days }}
 		{#if mois === monthName}
