@@ -31,7 +31,7 @@
 <!-- <svelte:component  /> -->
 
 <main>
-	<slot {segment} />
+	<slot />
 </main>
 
 <Footer />

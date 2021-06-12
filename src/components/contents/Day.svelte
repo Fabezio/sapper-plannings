@@ -17,7 +17,7 @@
     }
     // $: dayNb = parseInt(dayNb);
     // dateNb = parseInt(dateNb);
-    console.log(typeof i);
+    // console.log(typeof i);
     // console.log(typeof dateNb);
 </script>
 
@@ -34,9 +34,9 @@
     </span>
     <span>
         <span class="d-flex flex-row">
-            <Card {employees} {color} str="07h-19h" />
+            <Card {employees} str="07h-19h" />
 
-            <Card {employees} {color} str="19h-07h" />
+            <Card {employees} str="19h-07h" />
         </span>
     </span>
 </div>
