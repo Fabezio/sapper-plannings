@@ -15,6 +15,7 @@
         color = "success";
         border = "success";
     }
+
     // $: dayNb = parseInt(dayNb);
     // dateNb = parseInt(dateNb);
     // console.log(typeof i);
@@ -34,9 +35,9 @@
     </span>
     <span>
         <span class="d-flex flex-row">
-            <Card {employees} str="07h-19h" />
+            <Card {employees} symbol="🌞" str="07h-19h" />
 
-            <Card {employees} str="19h-07h" />
+            <Card {employees} symbol="🌑" str="19h-07h" />
         </span>
     </span>
 </div>

@@ -2,7 +2,10 @@
 	// import { onMount } from "svelte";
 
 	import timemap from "../data/timemap";
-	import { litteralFormatter } from "../services/dateTimeFormatter";
+	import {
+		litteralFormatter,
+		numericFormatter,
+	} from "../services/dateTimeFormatter";
 	// import MonthName from "./[monthName].svelte";
 	// import NamesList from "../components/contents/NamesList.svelte";
 	import Day from "../components/contents/Day.svelte";
@@ -18,6 +21,7 @@
 
 	const date = new Date();
 	const today = litteralFormatter.format(date);
+	const numToday = parseInt(numericFormatter.format(date).split("/")[1]);
 	const mois = today.split(" ")[2];
 	const dateNb = today.split(" ")[1];
 
@@ -28,7 +32,7 @@
 		// console.log("yes");
 		namesList = [];
 	}
-	months[6].days.map((day) => {
+	months[numToday - 1].days.map((day) => {
 		const { employees, dayNb, weekday } = day;
 
 		if (dayNb >= dateNb) {
@@ -59,7 +63,7 @@
 		console.log(e.target.innerHTML);
 		// filteredDays = []
 		thisPerson = e.target.innerHTML;
-		months[6].days.map((day) => {
+		months[numToday - 1].days.map((day) => {
 			const { employees, dayNb, weekday } = day;
 
 			if (dayNb >= dateNb) {
@@ -88,6 +92,7 @@
 
 <Title3 align={"center"}>Aujourd'hui: {today}</Title3>
 {@debug mois}
+<!-- {@debug numToday} -->
 
 <div class="d-flex flex-wrap justify-content-start my-3">
 	<!-- {@debug monthName} -->
@@ -122,9 +127,13 @@
 	{#each months as { monthName, days }}
 		{#if mois === monthName}
 			{#each days as day, i}
+				<!-- <div class="d-grid content-justify-start"> -->
 				{#if day.dayNb >= dateNb}
-					<Day {day} {i} />
+					<div class="d-grid">
+						<Day {day} {i} />
+					</div>
 				{/if}
+				<!-- </div> -->
 			{/each}
 		{/if}
 	{/each}

@@ -2,11 +2,12 @@
     import About from "../../../routes/about.svelte";
 
     export let vacation = {};
+    export let symbol;
     const { employment, employee, status } = vacation;
     // $: { period, service, employment, employee } = vacation;
     const { lastname, firstname } = employee;
     export let textColor;
-    // export let color;    
+    // export let color;
     $: if (!lastname.length) {
         nom = "- - - - -";
         textColor = "danger";
@@ -15,7 +16,7 @@
     }
     let text = "RAS";
     let bg = "success";
-    
+
     let logo = "";
     let isVisible = false;
     $: {
@@ -58,7 +59,6 @@
         {employment}
     -->
     <span
-        
         title={text}
         class="fa-stack {!isVisible ? 'opacity-15' : 'logo-opacity'} "
     >
@@ -69,10 +69,9 @@
         <span class=" fs-5" title={text}>{logo}</span>
     </span> -->
     {lastname}<span class="firstname">
-    {firstname &&
-        `, ${firstname}
+        {firstname &&
+            `, ${firstname}
         `}
-
     </span>
 </div>
 
@@ -99,16 +98,15 @@
         cursor: pointer;
         opacity: 1;
     }
-    
+
     .firstname {
         display: inline;
         margin: 0;
         padding: 0;
     }
     @media screen and (max-width: 768px) {
-    .firstname {
-        display: none;
-    }
-
+        .firstname {
+            display: none;
+        }
     }
 </style>

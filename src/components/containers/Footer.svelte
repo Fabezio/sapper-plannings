@@ -10,7 +10,7 @@
     <p>
         plannings-arcsdeseine &copy; {year}
     </p>
-    <p class="ml-3">
+    <p class="ms-5">
         <a
             class="text-light bg-transparent"
             href="https://github.com/Fabezio/sapper-plannings"
