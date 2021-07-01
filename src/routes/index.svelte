@@ -23,12 +23,12 @@
 
 	let filteredDays = [];
 	const title = "Planning version 2";
-
+	let monthNumber;
 	if (mois === "juillet") {
 		// console.log("yes");
 		namesList = [];
 	}
-	months[5].days.map((day) => {
+	months[6].days.map((day) => {
 		const { employees, dayNb, weekday } = day;
 
 		if (dayNb >= dateNb) {
@@ -59,7 +59,7 @@
 		console.log(e.target.innerHTML);
 		// filteredDays = []
 		thisPerson = e.target.innerHTML;
-		months[5].days.map((day) => {
+		months[6].days.map((day) => {
 			const { employees, dayNb, weekday } = day;
 
 			if (dayNb >= dateNb) {
