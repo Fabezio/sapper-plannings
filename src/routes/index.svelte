@@ -24,7 +24,7 @@
 	let filteredDays = [];
 	const title = "Planning version 2";
 
-	if (mois === "juin") {
+	if (mois === "juillet") {
 		// console.log("yes");
 		namesList = [];
 	}

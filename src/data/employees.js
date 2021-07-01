@@ -15,15 +15,19 @@ const employees = {
   koite: { lastname: 'Koite', firstname: 'Cheikh' },
   kone: { lastname: 'Kone', firstname: 'Oumar' },
   kuhosa: { lastname: 'Kuhosa', firstname: 'Germain' },
+  larbi: { lastname: 'Larbi', firstname: 'Ihmad' },
   lhomme: { lastname: 'Lhomme', firstname: 'Pascal' },
   lukombo: { lastname: 'Lukombo', firstname: 'Miguel' },
   renaud: { lastname: 'Renaud', firstname: 'Cyril' },
   riquet: { lastname: 'Riquet', firstname: 'Fabrice' },
-  vincent: { lastname: 'Vincent', firstname: 'Olivier' },
+  soumare: { lastname: 'Soumare', firstname: 'Fousseynou' },
   tachfine: { lastname: 'Tachfine', firstname: 'Ayoub' },
+  verdon: { lastname: 'Verdon', firstname: 'Gregory' },
+  vincent: { lastname: 'Vincent', firstname: 'Olivier' },
   // autres
-  perm: { lastname: 'permanence', firstname: '' },
-  perm2: { lastname: 'permanence 2', firstname: '' },
+  perm: { lastname: 'permanence' },
+  perm2: { lastname: 'permanence 2' },
+  unknown: { lastname: 'inconnu' }
 }
 // Object.keys(employees.lastname).sort()
 // console.log(Object.keys(employees))
