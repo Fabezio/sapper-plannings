@@ -90,7 +90,7 @@
 				});
 			}
 		});
-
+		showList = false;
 		console.log(filteredDays);
 		return filteredDays;
 	}
@@ -101,22 +101,38 @@
 	} else {
 		isSelected = false;
 	}
+	let showList = true;
+	$: if (showList) {
+		filteredDays = [];
+		thisPerson = "";
+	}
 </script>
 
 <Title3 align={"center"}>Aujourd'hui: {today}</Title3>
 {@debug mois}
 <!-- {@debug numToday} -->
-
-<div class="d-flex flex-wrap justify-content-start my-3">
-	<!-- {@debug monthName} -->
-	{#each namesList as person}
-		<!-- {@debug person} -->
-		<button
-			class="btn btn-sm btn-outline-primary me-1 mb-1"
-			on:click={selectPerson}>{person}</button
-		>
-	{/each}
+<div class="buttons">
+	{#if showList}
+		<div class="d-flex btn-group btn-group-sm text-center ">
+			<!-- {@debug monthName} -->
+			{#each namesList as person}
+				<!-- {@debug person} -->
+				<button
+					class="btn btn-secondary border-dark mb-1 py-3 px-2"
+					on:click={selectPerson}>{person}</button
+				>
+			{/each}
+		</div>
+	{:else}
+		<div class="d-grid">
+			<button
+				on:click={() => (showList = !showList)}
+				class="btn-lg btn-secondary ">Voir la liste</button
+			>
+		</div>
+	{/if}
 </div>
+
 <br />
 
 <!-- planning -->
@@ -149,3 +165,9 @@
 		{/if}
 	{/each}
 {/if}
+
+<style>
+	.buttons {
+		min-height: 80px;
+	}
+</style>

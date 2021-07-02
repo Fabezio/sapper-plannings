@@ -5,7 +5,7 @@
     import Card from "./bars/Card.svelte";
     export let day;
 
-    export let i;
+    // export let i;
     day.color = "default";
     day.border = "secondary";
 

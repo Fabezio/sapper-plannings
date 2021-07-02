@@ -26,9 +26,9 @@ export function get (_, res) {
     if (err) {
       res.status(500).send(err.stack())
     } else {
-        const employees = found
-        console.log(employees)
-        res.status(200).send(employees)
+      const employees = found
+      console.log(employees)
+      res.status(200).send(employees)
     }
   })
 }

@@ -6,7 +6,7 @@ import { litteralFormatter } from '../services/dateTimeFormatter'
 
 const { day, night } = periods
 const { s2, s1 } = employments
-const {granted, denied, progress, query, replace} = status
+const { granted, denied, progress, query, replace } = status
 
 const timemap = {
   site: 'Arcs de Seine',
