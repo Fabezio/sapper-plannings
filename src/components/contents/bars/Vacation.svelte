@@ -2,14 +2,15 @@
     import About from "../../../routes/about.svelte";
 
     export let vacation = {};
-    export let symbol;
+    // export let symbol;
     const { employment, employee, status } = vacation;
     // $: { period, service, employment, employee } = vacation;
-    const { lastname, firstname } = employee;
+    let { lastname, firstname } = employee;
     export let textColor;
     // export let color;
-    $: if (!lastname.length) {
-        nom = "- - - - -";
+    $: if (!lastname.length || lastname.toLowerCase() === "inconnu") {
+        lastname = "- - - - -";
+        firstname = "";
         textColor = "danger";
     } else if (lastname.toLowerCase().includes("permanence")) {
         textColor = "warning";
@@ -20,17 +21,17 @@
     let logo = "";
     let isVisible = false;
     $: {
-        if (status === "permutation demandée") {
+        if (status === "demandé") {
             text = "Demande de permutation";
             bg = "warning";
             logo = "fas fa-question";
             isVisible = true;
-        } else if (status === "permutation accordée") {
+        } else if (status === "accordé") {
             text = "Permutation accordée";
             bg = "success";
             logo = "fas fa-check";
             isVisible = true;
-        } else if (status === "permutation refusée") {
+        } else if (status === "refusé") {
             text = "Permutation refusée";
             bg = "danger";
             logo = "fas fa-times";
@@ -68,6 +69,7 @@
     <!-- <span class="change-logo bg-{bg}  rounded-circle badge-lg ">
         <span class=" fs-5" title={text}>{logo}</span>
     </span> -->
+
     {lastname}<span class="firstname">
         {firstname &&
             `, ${firstname}

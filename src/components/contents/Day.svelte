@@ -23,23 +23,25 @@
 </script>
 
 <!-- {#if i + 1 >= dateNb} -->
-<div
-    class="day d-flex flex-row justify-content-center card-deck mx-auto rounded-3 border-2 border-{border} p-1 alert alert-{color} shadow-sm "
->
-    <span
-        class=" text-center mt-2 font-weight-bold text-dark  "
-        style="min-width: 5rem;"
+<div class="d-grid">
+    <div
+        class="day d-flex flex-row justify-content-center card-deck mx-auto rounded-3 border-2 border-{border} p-1 alert alert-{color} shadow-sm "
     >
-        {weekday.slice(0, 3)}.
-        {dayNb}
-    </span>
-    <span>
-        <span class="d-flex flex-row">
-            <Card {employees} symbol="🌞" str="07h-19h" />
-
-            <Card {employees} symbol="🌑" str="19h-07h" />
+        <span
+            class=" text-center mt-2 font-weight-bold text-dark  "
+            style="min-width: 5rem;"
+        >
+            {weekday.slice(0, 3)}.
+            {dayNb}
         </span>
-    </span>
+        <span>
+            <span class="d-flex flex-row">
+                <Card {employees} symbol="🌞" str="07h-19h" />
+
+                <Card {employees} symbol="🌑" str="19h-07h" />
+            </span>
+        </span>
+    </div>
 </div>
 
 <!-- {/if} -->

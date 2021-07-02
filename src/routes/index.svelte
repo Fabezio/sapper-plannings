@@ -1,16 +1,29 @@
+<!-- <script context="module">
+	export function preload() {
+		return this.fetch(`employees.json`)
+			.then((e) => e.json())
+			.then((employees) => {
+				return { employees };
+			});
+	}
+</script>
+ -->
 <script>
-	// import { onMount } from "svelte";
+	/* 	export let employees;
+	console.log(employees); */
 
+	// import { onMount } from "svelte";
 	import timemap from "../data/timemap";
 	import {
 		litteralFormatter,
 		numericFormatter,
 	} from "../services/dateTimeFormatter";
+
 	// import MonthName from "./[monthName].svelte";
 	// import NamesList from "../components/contents/NamesList.svelte";
 	import Day from "../components/contents/Day.svelte";
 	import Title3 from "../components/headings/Title3.svelte";
-
+	// connexion();
 	let thisPerson = "";
 	let namesList = [];
 
@@ -129,9 +142,7 @@
 			{#each days as day, i}
 				<!-- <div class="d-grid content-justify-start"> -->
 				{#if day.dayNb >= dateNb}
-					<div class="d-grid">
-						<Day {day} {i} />
-					</div>
+					<Day {day} {i} />
 				{/if}
 				<!-- </div> -->
 			{/each}

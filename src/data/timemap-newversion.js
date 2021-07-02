@@ -24,17 +24,18 @@ const timemap = {
       monthName: 'mai',
       days: [
         {
-          dayNb: 1, ferie: true,
+          dayNb: 1,
+          ferie: true,
           employments: [
             {
               employName: s2,
-              day: {employee: employees.coulibaly, rem: "none"},
-              night: {employee: employees.riquet, rem: "none"}            
+              day: { employee: employees.coulibaly, rem: 'none' },
+              night: { employee: employees.riquet, rem: 'none' }
             },
             {
               employName: s1,
-              day: {employee: employees.disci, rem: "none"},
-              night: {employee: employees.kuhosa, rem: "none"}            
+              day: { employee: employees.disci, rem: 'none' },
+              night: { employee: employees.kuhosa, rem: 'none' }
             }
           ]
         },
@@ -43,13 +44,13 @@ const timemap = {
           employments: [
             {
               employName: s2,
-              day: {employee: employees.coulibaly, rem: "none"},
-              night: {employee: employees.dossou, rem: "none"}            
+              day: { employee: employees.coulibaly, rem: 'none' },
+              night: { employee: employees.dossou, rem: 'none' }
             },
             {
               employName: s1,
-              day: {employee: employees.disci, rem: "none"},
-              night: {employee: employees.kuhosa, rem: "none"}            
+              day: { employee: employees.disci, rem: 'none' },
+              night: { employee: employees.kuhosa, rem: 'none' }
             }
           ]
         },
@@ -58,13 +59,13 @@ const timemap = {
           employments: [
             {
               employName: s2,
-              day: {employee: employees.renaud, rem: "none"},
-              night: {employee: employees.perm2, rem: "none"}            
+              day: { employee: employees.renaud, rem: 'none' },
+              night: { employee: employees.perm2, rem: 'none' }
             },
             {
               employName: s1,
-              day: {employee: employees.kone, rem: "none"},
-              night: {employee: employees.jean, rem: "none"}            
+              day: { employee: employees.kone, rem: 'none' },
+              night: { employee: employees.jean, rem: 'none' }
             }
           ]
         },
@@ -73,13 +74,13 @@ const timemap = {
           employments: [
             {
               employName: s2,
-              day: {employee: employees.lhomme, rem: "none"},
-              night: {employee: employees.perm2, rem: "none"}            
+              day: { employee: employees.lhomme, rem: 'none' },
+              night: { employee: employees.perm2, rem: 'none' }
             },
             {
               employName: s1,
-              day: {employee: employees.lukombo, rem: "none"},
-              night: {employee: employees.jean, rem: "none"}            
+              day: { employee: employees.lukombo, rem: 'none' },
+              night: { employee: employees.jean, rem: 'none' }
             }
           ]
         },
@@ -88,13 +89,13 @@ const timemap = {
           employments: [
             {
               employName: s2,
-              day: {employee: employees.lhomme, rem: "none"},
-              night: {employee: employees.riquet, rem: "none"}            
+              day: { employee: employees.lhomme, rem: 'none' },
+              night: { employee: employees.riquet, rem: 'none' }
             },
             {
               employName: s1,
-              day: {employee: employees.kone, rem: "none"},
-              night: {employee: employees.kuhosa, rem: "none"}            
+              day: { employee: employees.kone, rem: 'none' },
+              night: { employee: employees.kuhosa, rem: 'none' }
             }
           ]
         },
