@@ -145,9 +145,9 @@
 {#if thisPerson.length > 0}
 	{#each months as { monthName, days }}
 		{#if mois === monthName}
-			{#each filteredDays as day, i}
+			{#each filteredDays as day}
 				{#if day.dayNb >= dateNb}
-					<Day {day} {i} />
+					<Day {day} />
 				{/if}
 			{/each}
 		{/if}
@@ -158,7 +158,7 @@
 			{#each days as day, i}
 				<!-- <div class="d-grid content-justify-start"> -->
 				{#if day.dayNb >= dateNb}
-					<Day {day} {i} />
+					<Day {day} />
 				{/if}
 				<!-- </div> -->
 			{/each}
