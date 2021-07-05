@@ -1,6 +1,6 @@
 const employees = {
   bayou: { lastname: 'Bayou', firstname: 'Rachid' },
-  bocum: { lastname: 'Bochum', firstname: 'Hamidou' },
+  bocum: { lastname: 'Bocum', firstname: 'Hamidou' },
   bonnet: { lastname: 'Bonnet', firstname: 'Sébastien' },
   boussetta: { lastname: 'Boussetta', firstname: 'Sami' },
   chaouti: { lastname: 'Chaouti', firstname: 'Brahim' },

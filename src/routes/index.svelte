@@ -45,7 +45,7 @@
 		// console.log("yes");
 		namesList = [];
 	}
-	months[numToday - 1].days.map((day) => {
+	months[6].days.map((day) => {
 		const { employees, dayNb, weekday } = day;
 
 		if (dayNb >= dateNb) {
@@ -76,7 +76,7 @@
 		console.log(e.target.innerHTML);
 		// filteredDays = []
 		thisPerson = e.target.innerHTML;
-		months[numToday - 1].days.map((day) => {
+		months[6].days.map((day) => {
 			const { employees, dayNb, weekday } = day;
 
 			if (dayNb >= dateNb) {
