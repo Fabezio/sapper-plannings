@@ -81,10 +81,10 @@
 
 			if (dayNb >= dateNb) {
 				employees.map(({ employee }) => {
-					const { lastname, firstname } = employee;
+					const { lastname, firstname, other } = employee;
 					const LASTNAME = lastname.toUpperCase();
-
 					if (thisPerson == LASTNAME) {
+						console.log(LASTNAME);
 						filteredDays = [...filteredDays, day];
 					}
 				});
@@ -111,16 +111,18 @@
 <Title3 align={"center"}>Aujourd'hui: {today}</Title3>
 {@debug mois}
 <!-- {@debug numToday} -->
-<div class="buttons">
+<div class="">
 	{#if showList}
-		<div class="d-flex btn-group btn-group-sm text-center ">
+		<div class="btn-sm text-center ">
 			<!-- {@debug monthName} -->
 			{#each namesList as person}
-				<!-- {@debug person} -->
-				<button
-					class="btn btn-secondary border-dark mb-1 py-3 px-2"
-					on:click={selectPerson}>{person}</button
-				>
+				{#if person !== "INCONNU"}
+					{@debug person}
+					<button
+						class="btn btn-secondary border-dark mb-1 "
+						on:click={selectPerson}>{person}</button
+					>
+				{/if}
 			{/each}
 		</div>
 	{:else}
@@ -168,6 +170,6 @@
 
 <style>
 	.buttons {
-		min-height: 80px;
+		min-height: 64px;
 	}
 </style>

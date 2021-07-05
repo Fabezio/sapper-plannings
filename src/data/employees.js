@@ -25,9 +25,9 @@ const employees = {
   verdon: { lastname: 'Verdon', firstname: 'Gregory' },
   vincent: { lastname: 'Vincent', firstname: 'Olivier' },
   // autres
-  perm: { lastname: 'permanence' },
-  perm2: { lastname: 'permanence 2' },
-  unknown: { lastname: 'inconnu' }
+  perm: { lastname: 'permanence' , other: true },
+  perm2: { lastname: 'permanence 2', other: true  },
+  unknown: { lastname: 'inconnu' , other: true }
 }
 // Object.keys(employees.lastname).sort()
 // console.log(Object.keys(employees))

@@ -10,7 +10,7 @@
 
 <span
     class=" d-flex text-capitalize p-2 employee-card"
-    style="min-width: 13rem"
+
 >
     <!-- <div class="text-{textColor}">{str}</div> -->
 
@@ -23,6 +23,18 @@
         {/each}
     </span>
 </span>
+
+<style>
+    .employee-card {
+        min-width: 14rem;
+    }
+    @media screen and (max-width: 480px) {
+    .employee-card {
+        min-width: 8rem;
+    }
+
+    }
+</style>
 
 <style>
 </style>
