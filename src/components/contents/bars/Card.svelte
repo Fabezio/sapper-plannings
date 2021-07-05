@@ -8,10 +8,7 @@
     if (str !== "07h-19h") textColor = "muted";
 </script>
 
-<span
-    class=" d-flex text-capitalize p-2 employee-card"
-
->
+<span class=" d-flex text-capitalize p-2 employee-card">
     <!-- <div class="text-{textColor}">{str}</div> -->
 
     <span class="me-1">{symbol}</span>
@@ -29,12 +26,8 @@
         min-width: 14rem;
     }
     @media screen and (max-width: 480px) {
-    .employee-card {
-        min-width: 8rem;
+        .employee-card {
+            min-width: 8rem;
+        }
     }
-
-    }
-</style>
-
-<style>
 </style>
