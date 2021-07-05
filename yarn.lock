@@ -1187,6 +1187,11 @@ bytes@3.1.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.0.tgz#f6cf7933a360e0588fa9fde85651cdc7f805d1f6"
   integrity sha512-zauLjrfCG+xvoyaqLoV8bLVXXNGC4JqlxFCutSDWA6fJrTo2ZuvLYTqZ7aHBLZSMOopbzwv8f+wZcVzfVTI2Dg==
 
+calendar@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/calendar/-/calendar-0.1.1.tgz#4678dbf192c516690f6cde20bb476140fd817463"
+  integrity sha512-CExn+MxSU1pCsjYiS+Cx8d1MtIZqezxRhpIu8odr1oqvYG/0C1m8lvehHxTl1FslgKbOD7Z5QuEcyk8sGgpZLQ==
+
 call-bind@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/call-bind/-/call-bind-1.0.2.tgz#b1d4e89e688119c3c9a903ad30abb2f6a919be3c"

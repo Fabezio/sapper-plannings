@@ -1,3 +1,6 @@
 {
-    "cSpell.enabled": false
+    "cSpell.enabled": false,
+    "standard.autoFixOnSave": true,
+    "scss.lint.vendorPrefix": "ignore",
+    "less.lint.vendorPrefix": "ignore"
 }

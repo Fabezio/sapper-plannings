@@ -1,4 +1,5 @@
 const employees = {
+  assemein: { lastname: 'Assemein', firstname: 'Alexis' },
   bayou: { lastname: 'Bayou', firstname: 'Rachid' },
   bocum: { lastname: 'Bocum', firstname: 'Hamidou' },
   bonnet: { lastname: 'Bonnet', firstname: 'Sébastien' },

@@ -1,28 +1,14 @@
-<!-- <script context="module">
-	export function preload() {
-		return this.fetch(`employees.json`)
-			.then((e) => e.json())
-			.then((employees) => {
-				return { employees };
-			});
-	}
-</script>
- -->
 <script>
-	/* 	export let employees;
-	console.log(employees); */
-
-	// import { onMount } from "svelte";
 	import timemap from "../data/timemap";
 	import {
 		litteralFormatter,
 		numericFormatter,
 	} from "../services/dateTimeFormatter";
 
-	// import MonthName from "./[monthName].svelte";
-	// import NamesList from "../components/contents/NamesList.svelte";
 	import Day from "../components/contents/Day.svelte";
 	import Title3 from "../components/headings/Title3.svelte";
+	import Calendar from "../components/contents/Calendar.svelte";
+	let showCal = true;
 	// connexion();
 	let thisPerson = "";
 	let namesList = [];
@@ -63,7 +49,6 @@
 	namesList.sort();
 
 	function selectPerson(e) {
-		// console.log(filteredDays.length, thisPerson.length);
 		if (filteredDays.length > 0) {
 			filteredDays = [];
 			console.log(filteredDays.length);
@@ -108,28 +93,32 @@
 	}
 </script>
 
+<div id="start" />
 <Title3 align={"center"}>Aujourd'hui: {today}</Title3>
-{@debug mois}
-<!-- {@debug numToday} -->
-<div class="">
+<div class="w-75 mx-auto">
 	{#if showList}
 		<div class="btn-sm text-center ">
 			<!-- {@debug monthName} -->
 			{#each namesList as person}
 				{#if person !== "INCONNU"}
-					{@debug person}
+					<!-- {@debug person} -->
 					<button
-						class="btn btn-secondary border-dark mb-1 "
+						class="btn btn-secondary border-dark me-1 mb-1 "
 						on:click={selectPerson}>{person}</button
 					>
 				{/if}
 			{/each}
 		</div>
 	{:else}
-		<div class="d-grid">
+		<div class="d-flex btn-group btn-group-lg rounded rounded-pill">
 			<button
 				on:click={() => (showList = !showList)}
-				class="btn-lg btn-secondary ">Voir la liste</button
+				class="btn btn-secondary border-right-dark "
+				>Voir la liste</button
+			>
+			<button
+				on:click={() => (showCal = !showCal)}
+				class="btn btn-primary ">Changer vue</button
 			>
 		</div>
 	{/if}
@@ -145,31 +134,51 @@
 >
 <br />
 {#if thisPerson.length > 0}
-	{#each months as { monthName, days }}
-		{#if mois === monthName}
-			{#each filteredDays as day}
-				{#if day.dayNb >= dateNb}
-					<Day {day} />
-				{/if}
-			{/each}
-		{/if}
-	{/each}
+	{#if showCal}
+		<Calendar {thisPerson} list={filteredDays} />
+	{:else}
+		{#each months as { monthName, days }}
+			{#if mois === monthName}
+				{#each filteredDays as day}
+					{#if day.dayNb >= dateNb}
+						<Day {day} />
+					{/if}
+				{/each}
+			{/if}
+		{/each}
+		<div
+			class="w-75 mx-auto d-flex btn-group btn-group-lg rounded rounded-pill mt-4"
+		>
+			<button
+				on:click={() => (showList = !showList)}
+				class="btn btn-secondary border-right-dark "
+				>Voir la liste</button
+			>
+			<button
+				on:click={() => (showCal = !showCal)}
+				class="btn btn-primary ">Changer vue</button
+			>
+			<a class="btn btn-outline-success" href="#start">retour au début</a>
+		</div>
+	{/if}
 {:else}
 	{#each months as { monthName, days }}
 		{#if mois === monthName}
-			{#each days as day, i}
-				<!-- <div class="d-grid content-justify-start"> -->
+			{#each days as day}
 				{#if day.dayNb >= dateNb}
 					<Day {day} />
 				{/if}
-				<!-- </div> -->
 			{/each}
 		{/if}
 	{/each}
-{/if}
+	<div
+		class="w-75 mx-auto d-flex btn-group btn-group-lg rounded rounded-pill mt-4"
+	>
+		<button
+			on:click={() => (showList = !showList)}
+			class="btn btn-secondary border-right-dark ">Voir la liste</button
+		>
 
-<style>
-	.buttons {
-		min-height: 64px;
-	}
-</style>
+		<a class="btn btn-outline-success" href="#start">retour au début</a>
+	</div>
+{/if}
