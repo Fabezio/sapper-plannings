@@ -1961,7 +1961,7 @@ const timemap = {
               period: day,
               service: 'sécurité',
               employment: s1,
-              employee: employees.assemein,
+              employee: employees.assemien,
               status: replace
             },
             {
@@ -1991,7 +1991,7 @@ const timemap = {
               period: day,
               service: 'sécurité',
               employment: s1,
-              employee: employees.assemein,
+              employee: employees.assemien,
               status: replace
             },
             {
@@ -2111,7 +2111,7 @@ const timemap = {
               period: day,
               service: 'sécurité',
               employment: s1,
-              employee: employees.assemein,
+              employee: employees.assemien,
               status: replace
             },
             {
@@ -2141,7 +2141,7 @@ const timemap = {
               period: day,
               service: 'sécurité',
               employment: s1,
-              employee: employees.assemein,
+              employee: employees.assemien,
               status: replace
             },
             {

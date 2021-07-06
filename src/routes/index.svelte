@@ -95,7 +95,7 @@
 
 <div id="start" />
 <Title3 align={"center"}>Aujourd'hui: {today}</Title3>
-<div class="w-75 mx-auto">
+<div class="container mx-auto">
 	{#if showList}
 		<div class="btn-sm text-center ">
 			<!-- {@debug monthName} -->
@@ -147,7 +147,7 @@
 			{/if}
 		{/each}
 		<div
-			class="w-75 mx-auto d-flex btn-group btn-group-lg rounded rounded-pill mt-4"
+			class="container mx-auto d-flex btn-group btn-group-lg rounded rounded-pill mt-4"
 		>
 			<button
 				on:click={() => (showList = !showList)}
@@ -172,7 +172,7 @@
 		{/if}
 	{/each}
 	<div
-		class="w-75 mx-auto d-flex btn-group btn-group-lg rounded rounded-pill mt-4"
+		class="container mx-auto d-flex btn-group btn-group-lg rounded rounded-pill mt-4"
 	>
 		<button
 			on:click={() => (showList = !showList)}

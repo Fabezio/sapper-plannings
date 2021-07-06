@@ -54,9 +54,11 @@
     );
 </script>
 
-<table class="mx-auto rounded border border-secondary w-75 table table-striped">
+<table
+    class="mx-auto rounded border border-2 border-dark container table-striped"
+>
     <!-- {@debug flatList} -->
-    <thead>
+    <thead class="border-bottom border-2 border-dark">
         <tr class="py-3">
             {#each "lun mar mer jeu ven sam dim".split(" ") as day, i}
                 <th class="text-center {i >= 5 && 'bg-info'}"
