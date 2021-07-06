@@ -1,4 +1,5 @@
 <script>
+	// import { fade } from "svelte/transition";
 	import timemap from "../data/timemap";
 	import {
 		litteralFormatter,
@@ -171,14 +172,27 @@
 			{/each}
 		{/if}
 	{/each}
-	<div
+	<!-- <div
 		class="container mx-auto d-flex btn-group btn-group-lg rounded rounded-pill mt-4"
 	>
-		<button
-			on:click={() => (showList = !showList)}
-			class="btn btn-secondary border-right-dark ">Voir la liste</button
-		>
+	<button
+	on:click={() => (showList = !showList)}
+	class="btn btn-secondary border-right-dark ">Voir la liste</button
+	>
+	
+</div> -->
 
-		<a class="btn btn-outline-success" href="#start">retour au début</a>
-	</div>
+	<button
+		class="container mx-auto d-grid text-center btn-lg bg-white btn-outline-success rounded  mt-4"
+	>
+		<a class="text-center mx-auto bg-light no-decoration" href="#start"
+			>retour au début
+		</a></button
+	>
 {/if}
+
+<style>
+	.no-decoration {
+		text-decoration: none;
+	}
+</style>

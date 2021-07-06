@@ -13,18 +13,12 @@
         workedDays = [...workedDays, { dayNb: parseInt(dayNb), bg }];
     });
     console.table(workedDays);
-    $: m.map((w) =>
-        w.map((d) => {
-            // const l = d.split("")[1];
-            // console.log(JSON.stringify(d).split("-")[2].slice(0, 2));
-        })
-    );
+
     const calContent = m.flat();
     calContent.map((val, i) => {
         return (calContent[i] = parseInt(
             JSON.stringify(val).split("-")[2].slice(0, 2)
         ));
-        // console.log(val, i);
     });
     const date = new Date();
     const today = date.getDate();
@@ -55,7 +49,7 @@
 </script>
 
 <table
-    class="mx-auto rounded border border-2 border-dark container table-striped"
+    class="mx-auto rounded border border-2 border-dark container table table-striped"
 >
     <!-- {@debug flatList} -->
     <thead class="border-bottom border-2 border-dark">
@@ -64,12 +58,6 @@
                 <th class="text-center {i >= 5 && 'bg-info'}"
                     >{day.toUpperCase()}</th
                 >
-                <!-- <th>Mar</th>
-            <th>Mer</th>
-            <th>Jeu</th>
-            <th>Ven</th>
-            <th>Sam</th>
-            <th>Dim</th> -->
             {/each}
         </tr>
     </thead>

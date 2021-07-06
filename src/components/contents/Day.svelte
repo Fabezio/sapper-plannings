@@ -1,7 +1,4 @@
 <script>
-    // import { parse } from "path/posix";
-
-    // import Vacation from "./Vacation.svelte";
     import Card from "./bars/Card.svelte";
     export let day;
 
@@ -23,9 +20,9 @@
 </script>
 
 <!-- {#if i + 1 >= dateNb} -->
-<div class="d-grid">
+<div class="d-grid my-0">
     <div
-        class="day d-flex flex-row justify-content-center card-deck mx-auto rounded-3 border-2 border-{border} p-1 alert alert-{color} shadow-sm "
+        class="day d-flex flex-row justify-content-center  card-deck mx-auto rounded-3 border-2 border-{border} p-1 alert alert-{color} shadow-sm "
     >
         <span
             class=" text-center mt-2 font-weight-bold text-dark  "
@@ -38,7 +35,7 @@
             <span class="d-flex flex-row">
                 <Card {employees} symbol="🌞" str="07h-19h" />
 
-                <Card {employees} symbol="🌑" str="19h-07h" />
+                <Card {employees} symbol="🌗 " str="19h-07h" />
             </span>
         </span>
     </div>
