@@ -2016,7 +2016,7 @@ const timemap = {
               service: 'sécurité',
               employment: s2,
               employee: employees.chaouti,
-              status: progress
+              status: granted
             },
             {
               period: day,
@@ -2076,7 +2076,7 @@ const timemap = {
               service: 'sécurité',
               employment: s2,
               employee: employees.coulibaly,
-              status: progress
+              status: granted
             },
             {
               period: day,
@@ -2411,7 +2411,8 @@ const timemap = {
               period: night,
               service: 'sécurité',
               employment: s2,
-              employee: employees.riquet
+              employee: employees.bocum,
+              status: query
             },
             {
               period: night,
@@ -2498,7 +2499,8 @@ const timemap = {
               period: night,
               service: 'sécurité',
               employment: s2,
-              employee: employees.bocum
+              employee: employees.bocum,
+              status: query
             },
             {
               period: night,
