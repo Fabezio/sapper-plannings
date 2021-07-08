@@ -136,7 +136,7 @@
 <br />
 {#if thisPerson.length > 0}
 	{#if showCal}
-		<Calendar {thisPerson} list={filteredDays} />
+		<Calendar list={filteredDays} />
 	{:else}
 		{#each months as { monthName, days }}
 			{#if mois === monthName}
