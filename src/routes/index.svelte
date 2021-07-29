@@ -1,5 +1,6 @@
 <script>
 	// import { fade } from "svelte/transition";
+	import Head from "../components/containers/Head.svelte";
 	import timemap from "../data/timemap";
 	import {
 		litteralFormatter,
@@ -11,13 +12,13 @@
 	import Calendar from "../components/contents/Calendar.svelte";
 	let showCal = true;
 	// connexion();
-	let thisPerson = "";
+	let thisPerson = "riquet";
 	let namesList = [];
 
 	let monthName = "";
 
 	const { months } = timemap;
-	let isSelected = false;
+	let isSelected = true;
 
 	const date = new Date();
 	const today = litteralFormatter.format(date);
@@ -94,6 +95,7 @@
 	}
 </script>
 
+<Head {title} />
 <div id="start" />
 <Title3 align={"center"}>Aujourd'hui: {today}</Title3>
 <div class="container mx-auto">
