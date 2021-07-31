@@ -2,7 +2,7 @@
     import { Calendar } from "calendar";
     export let list = {};
     const cal = new Calendar(2);
-    const m = cal.monthDates(2021, 6);
+    const m = cal.monthDates(2021, 7);
     let workedDays = [];
     list.map(({ dayNb, ferie, weekday }) => {
         let bg = "";
