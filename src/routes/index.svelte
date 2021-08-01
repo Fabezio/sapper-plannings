@@ -29,7 +29,7 @@
 	let filteredDays = [];
 	const title = "Planning version 2";
 	let monthNumber;
-	if (mois === "juillet") {
+	if (mois === "août") {
 		// console.log("yes");
 		namesList = [];
 	}

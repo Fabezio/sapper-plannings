@@ -2746,7 +2746,7 @@ const timemap = {
       ]
     },
     {
-      monthName: 'aout',
+      monthName: 'août',
       days: [
         {
           dayNb: 1,
@@ -3158,7 +3158,7 @@ const timemap = {
               period: night,
               service: 'sécurité',
               employment: s1,
-              employee: employees.unkown
+              employee: employees.unknown
             }
           ]
         },
@@ -3188,7 +3188,7 @@ const timemap = {
               period: night,
               service: 'sécurité',
               employment: s1,
-              employee: employees.unkown
+              employee: employees.unknown
             }
           ]
         },

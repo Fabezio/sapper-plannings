@@ -13,7 +13,8 @@
         firstname = "";
         textColor = "danger";
     } else if (lastname.toLowerCase().includes("permanence")) {
-        textColor = "warning";
+        firstname = ""
+        textColor = "danger";
     }
     let text = "RAS";
     let bg = "success";
@@ -59,13 +60,13 @@
     <!-- {service}
         {employment}
     -->
-    <span
+   <!--  <span
         title={text}
         class="fa-stack {!isVisible ? 'opacity-15' : 'logo-opacity'} "
     >
         <i class="fas fa-stack-2x fa-circle text-{bg}" />
         <i class="{logo} fa-stack-1x fa-lg fa-fw me-1 fa-inverse " />
-    </span>
+    </span> -->
     <!-- <span class="change-logo bg-{bg}  rounded-circle badge-lg ">
         <span class=" fs-5" title={text}>{logo}</span>
     </span> -->

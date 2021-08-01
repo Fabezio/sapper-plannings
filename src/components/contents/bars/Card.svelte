@@ -11,7 +11,7 @@
 <span class=" d-flex text-capitalize p-2 employee-card">
     <!-- <div class="text-{textColor}">{str}</div> -->
 
-    <span class="me-1">{symbol}</span>
+    <span class="me-2 pe-1">{symbol}</span>
     <span class="flex-column">
         {#each employees as vacation, i}
             {#if vacation.period === str}
