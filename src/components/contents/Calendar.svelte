@@ -57,7 +57,7 @@
         // console.table(w)
         // return w
     );
-    console.table(newCal);
+    // console.table(newCal);
     const legend = [
         { color: "light", label: "Jour ouvré" },
         { color: "info", label: "Weekend / férié" },

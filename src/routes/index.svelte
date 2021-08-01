@@ -37,18 +37,30 @@
 		const { employees, dayNb, weekday } = day;
 
 		if (dayNb >= dateNb) {
-			employees.map(({ employee }) => {
+			employees.map(({ employee} ) => {
 				const { lastname, firstname } = employee;
-				const LASTNAME = lastname.toUpperCase();
+				let LASTNAME = ""
+				let completeName 
+				if (lastname !== "Inconnu" && !lastname.includes("Perm")) {LASTNAME = lastname.toUpperCase();
+				completeName = LASTNAME
+}
+				if (firstname && firstname.length > 0) {
+					const FIRSTNAME = firstname.toUpperCase();
+					
+					completeName += ` ${FIRSTNAME[0]}`
+				} 
 
-				if (!namesList.includes(LASTNAME)) {
-					namesList = [...namesList, LASTNAME];
+				if (!namesList.includes(completeName)) {
+					namesList = [...namesList, completeName];
 				}
 			});
 		}
+		
+		return namesList
 	});
-
+	
 	namesList.sort();
+	console.table(namesList)
 
 	function selectPerson(e) {
 		if (filteredDays.length > 0) {
@@ -69,9 +81,15 @@
 			if (dayNb >= dateNb) {
 				employees.map(({ employee }) => {
 					const { lastname, firstname, other } = employee;
-					const LASTNAME = lastname.toUpperCase();
-					if (thisPerson == LASTNAME) {
-						console.log(LASTNAME);
+					let completeName= ""
+					if (lastname !== "Inconnu" && !lastname.includes("Perm")) {LASTNAME = lastname.toUpperCase();
+				completeName = LASTNAME
+}
+					if (firstname && firstname.length > 1) {
+						completeName += " ", firstname[0].toUpperCase()
+					}
+					if (thisPerson == completeName) {
+						console.log(completeName);
 						filteredDays = [...filteredDays, day];
 					}
 				});
