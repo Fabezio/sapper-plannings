@@ -4,8 +4,6 @@
 	import Contact from "../components/containers/ContactLine.svelte";
 	import Footer from "../components/containers/Footer.svelte";
 
-	// import { url } from "inspector";
-
 	const links = [
 		// { url: "calendar", label: "Calendrier", visible: false },
 		// { url: "about", label: "About", visible: false },

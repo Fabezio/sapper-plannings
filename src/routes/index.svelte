@@ -1,66 +1,56 @@
 <script>
-	// import { fade } from "svelte/transition";
 	import Head from "../components/containers/Head.svelte";
 	import timemap from "../data/timemap";
-	import {
-		litteralFormatter,
-		numericFormatter,
-	} from "../services/dateTimeFormatter";
+	import { litteralFormatter } from "../services/dateTimeFormatter";
 
 	import Day from "../components/contents/Day.svelte";
 	import Title3 from "../components/headings/Title3.svelte";
 	import Calendar from "../components/contents/Calendar.svelte";
 	let showCal = true;
-	// connexion();
+
 	let thisPerson = "riquet";
 	let namesList = [];
-
-	let monthName = "";
 
 	const { months } = timemap;
 	let isSelected = true;
 
 	const date = new Date();
 	const today = litteralFormatter.format(date);
-	const numToday = parseInt(numericFormatter.format(date).split("/")[1]);
+
 	const mois = today.split(" ")[2];
 	const dateNb = today.split(" ")[1];
 
 	let filteredDays = [];
 	const title = "Planning version 2";
-	let monthNumber;
+
 	if (mois === "août") {
-		// console.log("yes");
 		namesList = [];
 	}
 	months[7].days.map((day) => {
 		const { employees, dayNb, weekday } = day;
 
 		if (dayNb >= dateNb) {
-			employees.map(({ employee} ) => {
-				const { lastname, firstname } = employee;
-				let LASTNAME = ""
-				let completeName 
-				if (lastname !== "Inconnu" && !lastname.includes("Perm")) {LASTNAME = lastname.toUpperCase();
-				completeName = LASTNAME
-}
-				if (firstname && firstname.length > 0) {
-					const FIRSTNAME = firstname.toUpperCase();
-					
-					completeName += ` ${FIRSTNAME[0]}`
-				} 
+			employees.map(({ employee }) => {
+				const { lastname, firstname, other } = employee;
+				let completeName = "";
+				if (!other) completeName = lastname.toUpperCase();
 
-				if (!namesList.includes(completeName)) {
+				if (firstname && firstname.length > 0)
+					completeName += ` ${firstname[0].toUpperCase()}`;
+
+				if (
+					!namesList.includes(completeName) &&
+					completeName.length > 1
+				)
 					namesList = [...namesList, completeName];
-				}
 			});
 		}
-		
-		return namesList
+
+		return namesList;
 	});
-	
+
 	namesList.sort();
-	console.table(namesList)
+	console.table(namesList);
 
 	function selectPerson(e) {
 		if (filteredDays.length > 0) {
@@ -71,9 +61,9 @@
 			thisPerson = "";
 			console.log(thisPerson.length);
 		}
-		// filteredDays = [];
+
 		console.log(e.target.innerHTML);
-		// filteredDays = []
+
 		thisPerson = e.target.innerHTML;
 		months[7].days.map((day) => {
 			const { employees, dayNb, weekday } = day;
@@ -81,17 +71,14 @@
 			if (dayNb >= dateNb) {
 				employees.map(({ employee }) => {
 					const { lastname, firstname, other } = employee;
-					let completeName= ""
-					if (lastname !== "Inconnu" && !lastname.includes("Perm")) {LASTNAME = lastname.toUpperCase();
-				completeName = LASTNAME
-}
-					if (firstname && firstname.length > 1) {
-						completeName += " ", firstname[0].toUpperCase()
-					}
-					if (thisPerson == completeName) {
-						console.log(completeName);
+					let completeName = "";
+					if (!other) completeName = lastname.toUpperCase();
+
+					if (firstname && firstname.length > 0)
+						completeName += ` ${firstname[0].toUpperCase()}`;
+
+					if (completeName === thisPerson)
 						filteredDays = [...filteredDays, day];
-					}
 				});
 			}
 		});
@@ -119,10 +106,8 @@
 <div class="container mx-auto">
 	{#if showList}
 		<div class="btn-sm text-center ">
-			<!-- {@debug monthName} -->
 			{#each namesList as person}
-				{#if person !== "INCONNU"}
-					<!-- {@debug person} -->
+				{#if !person.other}
 					<button
 						class="btn btn-secondary border-dark me-1 mb-1 "
 						on:click={selectPerson}>{person}</button
@@ -147,7 +132,6 @@
 
 <br />
 
-<!-- planning -->
 <Title3 align="center"
 	>{thisPerson.length > 0
 		? `Planning de ${thisPerson}`
@@ -192,15 +176,6 @@
 			{/each}
 		{/if}
 	{/each}
-	<!-- <div
-		class="container mx-auto d-flex btn-group btn-group-lg rounded rounded-pill mt-4"
-	>
-	<button
-	on:click={() => (showList = !showList)}
-	class="btn btn-secondary border-right-dark ">Voir la liste</button
-	>
-	
-</div> -->
 
 	<button
 		class="container mx-auto d-grid text-center btn-lg bg-white btn-outline-success rounded  mt-4"
